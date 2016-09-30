@@ -1,6 +1,6 @@
-================
-C/C++ References
-================
+=====
+C/C++
+=====
 
 |link_learnc|
     This is a great place to start learning C without worrying about compilers

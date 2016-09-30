@@ -6,14 +6,10 @@ There are many tools that might be specific to the project or language(s) you
 are working with, but there are a few which are generally useful regardless
 of the environment.
 
-TODO: add vagrant/virtualbox VM info
-TODO: add cloud hosting section
-TODO: add SSH section
-
 
 |link_putty|
     Easily the best SSH client if you need to work with Windows
-    (*NIX systems should already have the tools you need installed); when you
+    (UNIX systems should already have the tools you need installed); when you
     install putty, it should also give you the executables for puttygen which
     you use to generate your encryption keys, and pageant, which is a key agent.
 
