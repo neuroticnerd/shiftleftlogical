@@ -87,7 +87,12 @@ today_fmt = ANSI_DATE_FMT
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
-exclude_patterns = [BUILD_DIRECTORY, 'Thumbs.db', '.DS_Store']
+exclude_patterns = [
+    BUILD_DIRECTORY,
+    'README.rst',
+    'Thumbs.db',
+    '.DS_Store',
+]
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -140,7 +145,7 @@ html_theme_options = {
     'github_count': True,
     'sidebar_includehidden': True,
     'sidebar_collapse': True,
-    'fixed_sidebar': True,
+    'fixed_sidebar': False,
 }
 html_sidebars = {
     '**': [

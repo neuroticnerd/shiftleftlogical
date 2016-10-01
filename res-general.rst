@@ -29,7 +29,9 @@ Forums and Blogs
     Joel Spolsky is another blogger as well as being the other Co-Founder of
     |link_stackoverflow|. He also has good things to read.
 
-|link_codingintro| (used to be available |link_introold|)
+|link_codingintro|
+    This resource used to be available |link_introold| (at time of writing this
+    link no longer works).
     Now it seems to only be available via the Wayback Machine, but it is a
     very simple intro to programming from the assumption that the reader
     doesn't know anything about it.
