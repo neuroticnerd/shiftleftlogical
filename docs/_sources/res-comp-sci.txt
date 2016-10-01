@@ -32,16 +32,16 @@ Discrete Mathematics
 
 .. |link_wiki_compsci| raw:: html
 
-    <a href="https://en.wikipedia.org/wiki/Outline_of_computer_science" target="_blank">Outline of Computer Science (wiki)</a>
+    <a href="https://en.wikipedia.org/wiki/Outline_of_computer_science" rel="external noopener noreferrer">Outline of Computer Science (wiki)</a>
 
 .. |link_compsci_intro| raw:: html
 
-    <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-00sc-introduction-to-computer-science-and-programming-spring-2011/" target="_blank">Introduction to Computer Science and Programming (MIT OCW)</a>
+    <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-00sc-introduction-to-computer-science-and-programming-spring-2011/" rel="external noopener noreferrer">Introduction to Computer Science and Programming (MIT OCW)</a>
 
 .. |link_compsci_basics| raw:: html
 
-    <a href="https://web.eecs.utk.edu/research/cs100modules/" target="_blank">Basics of Computer Science (interactive slideshow)</a>
+    <a href="https://web.eecs.utk.edu/research/cs100modules/" rel="external noopener noreferrer">Basics of Computer Science (interactive slideshow)</a>
 
 .. |link_mathforcompsci| raw:: html
 
-    <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-spring-2015/" target="_blank">Mathematics for Computer Science (MIT OCW)</a>
+    <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-spring-2015/" rel="external noopener noreferrer">Mathematics for Computer Science (MIT OCW)</a>

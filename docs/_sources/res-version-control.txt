@@ -56,44 +56,44 @@ The learning curve may be slightly steeper, but it serves its purpose well.
 
 .. |link_git| raw:: html
 
-    <a href="https://git-scm.com/" target="_blank">Git</a>
+    <a href="https://git-scm.com/" rel="external noopener noreferrer">Git</a>
 
 .. |link_git_tuts| raw:: html
 
-    <a href="https://sixrevisions.com/resources/git-tutorials-beginners/" target="_blank">Git tutorials</a>
+    <a href="https://sixrevisions.com/resources/git-tutorials-beginners/" rel="external noopener noreferrer">Git tutorials</a>
 
 .. |link_git_begin| raw:: html
 
-    <a href="https://stackoverflow.com/questions/315911/git-for-beginners-the-definitive-practical-guide" target="_blank">Git for beginners</a>
+    <a href="https://stackoverflow.com/questions/315911/git-for-beginners-the-definitive-practical-guide" rel="external noopener noreferrer">Git for beginners</a>
 
 .. |link_git_atlassian| raw:: html
 
-    <a href="https://www.atlassian.com/git/tutorial" target="_blank">Git Tutorial</a>
+    <a href="https://www.atlassian.com/git/tutorial" rel="external noopener noreferrer">Git Tutorial</a>
 
 .. |link_git_tut| raw:: html
 
-    <a href="https://www.vogella.com/tutorials/Git/article.html" target="_blank">Git tutorial</a>
+    <a href="https://www.vogella.com/tutorials/Git/article.html" rel="external noopener noreferrer">Git tutorial</a>
 
 .. |link_github| raw:: html
 
-    <a href="https://github.com/" target="_blank">GitHub</a>
+    <a href="https://github.com/" rel="external noopener noreferrer">GitHub</a>
 
 .. |link_gitextensions| raw:: html
 
-    <a href="https://code.google.com/p/gitextensions/" target="_blank">GitExtensions</a>
+    <a href="https://code.google.com/p/gitextensions/" rel="external noopener noreferrer">GitExtensions</a>
 
 .. |link_sourcetree| raw:: html
 
-    <a href="https://www.atlassian.com/software/sourcetree/overview" target="_blank">SourceTree</a>
+    <a href="https://www.atlassian.com/software/sourcetree/overview" rel="external noopener noreferrer">SourceTree</a>
 
 .. |link_gitgui_nix| raw:: html
 
-    <a href="https://git.wiki.kernel.org/index.php/InterfacesFrontendsAndTools#Graphical_Interfaces" target="_blank">Linux Git GUIs</a>
+    <a href="https://git.wiki.kernel.org/index.php/InterfacesFrontendsAndTools#Graphical_Interfaces" rel="external noopener noreferrer">Linux Git GUIs</a>
 
 .. |link_smartgit| raw:: html
 
-    <a href="https://www.syntevo.com/smartgit/" target="_blank">SmartGit</a>
+    <a href="https://www.syntevo.com/smartgit/" rel="external noopener noreferrer">SmartGit</a>
 
 .. |link_gitlab| raw:: html
 
-    <a href="https://about.gitlab.com/" target="_blank">GitLab</a>
+    <a href="https://about.gitlab.com/" rel="external noopener noreferrer">GitLab</a>

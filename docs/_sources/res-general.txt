@@ -37,20 +37,20 @@ Forums and Blogs
 
 .. |link_stackoverflow| raw:: html
 
-    <a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>
+    <a href="https://stackoverflow.com/" rel="external noopener noreferrer">Stack Overflow</a>
 
 .. |link_codinghorror| raw:: html
 
-    <a href="https://blog.codinghorror.com/" target="_blank">Coding Horror</a>
+    <a href="https://blog.codinghorror.com/" rel="external noopener noreferrer">Coding Horror</a>
 
 .. |link_joelonsoftware| raw:: html
 
-    <a href="http://www.joelonsoftware.com/" target="_blank">Joel on Software</a>
+    <a href="http://www.joelonsoftware.com/" rel="external noopener noreferrer">Joel on Software</a>
 
 .. |link_codingintro| raw:: html
 
-    <a href="https://web.archive.org/web/20160307215602/http://codingintro.com/" target="_blank">The Little Introduction To Programming</a>
+    <a href="https://web.archive.org/web/20160307215602/http://codingintro.com/" rel="external noopener noreferrer">The Little Introduction To Programming</a>
 
 .. |link_introold| raw:: html
 
-    <a href="http://codingintro.com/" target="_blank">here</a>
+    <a href="http://codingintro.com/" rel="external noopener noreferrer">here</a>

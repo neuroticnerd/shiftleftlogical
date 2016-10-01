@@ -40,36 +40,36 @@ You should also be aware of the |link_cbookguide|, however, just keep in mind th
 
 .. |link_learnc| raw:: html
 
-    <a href="https://learn-c.org/" target="_blank">Learn C</a>
+    <a href="https://learn-c.org/" rel="external noopener noreferrer">Learn C</a>
 
 .. |link_cbook| raw:: html
 
-    <a href="https://publications.gbdirect.co.uk/c_book/" target="_blank">The C Book</a>
+    <a href="https://publications.gbdirect.co.uk/c_book/" rel="external noopener noreferrer">The C Book</a>
 
 .. |link_cppsite| raw:: html
 
-    <a href="https://www.cplusplus.com/" target="_blank">CPlusPlus</a>
+    <a href="https://www.cplusplus.com/" rel="external noopener noreferrer">CPlusPlus</a>
 
 .. |link_cstandard| raw:: html
 
-    <a href="https://www.knosof.co.uk/cbook/cbook.html" target="_blank">The New C Standard</a>
+    <a href="https://www.knosof.co.uk/cbook/cbook.html" rel="external noopener noreferrer">The New C Standard</a>
 
 .. |link_matterscomp| raw:: html
 
-    <a href="https://www.jjj.de/fxt/fxtbook.pdf" target="_blank">Matters Computational</a>
+    <a href="https://www.jjj.de/fxt/fxtbook.pdf" rel="external noopener noreferrer">Matters Computational</a>
 
 .. |link_cppannotations| raw:: html
 
-    <a href="https://fbb-git.github.io/cppannotations/" target="_blank">C++ Annotations</a>
+    <a href="https://fbb-git.github.io/cppannotations/" rel="external noopener noreferrer">C++ Annotations</a>
 
 .. |link_cppanncontent| raw:: html
 
-    <a href="https://fbb-git.github.io/cppannotations/cppannotations/html/index.html" target="_blank">actual content</a>
+    <a href="https://fbb-git.github.io/cppannotations/cppannotations/html/index.html" rel="external noopener noreferrer">actual content</a>
 
 .. |link_cnetcode| raw:: html
 
-    <a href="https://beej.us/guide/bgnet/" target="_blank">Network Programming</a>
+    <a href="https://beej.us/guide/bgnet/" rel="external noopener noreferrer">Network Programming</a>
 
 .. |link_cbookguide| raw:: html
 
-    <a href="https://stackoverflow.com/questions/388242/the-definitive-c-book-guide-and-list" target="_blank">The Definitive C Book Guide and List</a>
+    <a href="https://stackoverflow.com/questions/388242/the-definitive-c-book-guide-and-list" rel="external noopener noreferrer">The Definitive C Book Guide and List</a>

@@ -53,47 +53,47 @@ write for the old and try to make it future-compatible.
 
 .. |link_learnpython| raw:: html
 
-    <a href="https://www.learnpython.org/" target="_blank">Learn Python</a>
+    <a href="https://www.learnpython.org/" rel="external noopener noreferrer">Learn Python</a>
 
 .. |link_thinkpython| raw:: html
 
-    <a href="https://greenteapress.com/wp/think-python-2e/" target="_blank">Think Python</a>
+    <a href="https://greenteapress.com/wp/think-python-2e/" rel="external noopener noreferrer">Think Python</a>
 
 .. |link_httlacspy3| raw:: html
 
-    <a href="https://openbookproject.net/thinkcs/python/english3e/" target="_blank">How to Think Like a Computer Scientist: Python 3</a>
+    <a href="https://openbookproject.net/thinkcs/python/english3e/" rel="external noopener noreferrer">How to Think Like a Computer Scientist: Python 3</a>
 
 .. |link_thinkcs_old| raw:: html
 
-    <a href="https://www.greenteapress.com/thinkpython/thinkCSpy/" target="_blank">previous official edition</a>
+    <a href="https://www.greenteapress.com/thinkpython/thinkCSpy/" rel="external noopener noreferrer">previous official edition</a>
 
 .. |link_pycourse| raw:: html
 
-    <a href="https://www.python-course.eu/course.php" target="_blank">python course</a>
+    <a href="https://www.python-course.eu/course.php" rel="external noopener noreferrer">python course</a>
 
 .. |link_pyhardway| raw:: html
 
-    <a href="https://learnpythonthehardway.org/book/" target="_blank">Learn Python the Hard Way</a>
+    <a href="https://learnpythonthehardway.org/book/" rel="external noopener noreferrer">Learn Python the Hard Way</a>
 
 .. |link_pyawesome| raw:: html
 
-    <a href="https://github.com/vinta/awesome-python" target="_blank">Awesome Python</a>
+    <a href="https://github.com/vinta/awesome-python" rel="external noopener noreferrer">Awesome Python</a>
 
 .. |link_py4fun| raw:: html
 
-    <a href="https://www.openbookproject.net/py4fun/" target="_blank">Python 4 Fun</a>
+    <a href="https://www.openbookproject.net/py4fun/" rel="external noopener noreferrer">Python 4 Fun</a>
 
 .. |link_pynlp| raw:: html
 
-    <a href="https://www.nltk.org/book/" target="_blank">Natural Language Processing with Python</a>
+    <a href="https://www.nltk.org/book/" rel="external noopener noreferrer">Natural Language Processing with Python</a>
 
 .. |link_intro_py| raw:: html
 
-    <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/" target="_blank">A Gentle Introduction to Programming Using Python (MIT OCW)</a>
+    <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/" rel="external noopener noreferrer">A Gentle Introduction to Programming Using Python (MIT OCW)</a>
 
 .. |link_nonprog_guide| raw:: html
 
-    <a href="https://wiki.python.org/moin/BeginnersGuide/NonProgrammers" target="_blank">Non-programmers Guide to Python Programming</a>
+    <a href="https://wiki.python.org/moin/BeginnersGuide/NonProgrammers" rel="external noopener noreferrer">Non-programmers Guide to Python Programming</a>
 
 
 Things to Note

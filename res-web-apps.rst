@@ -69,72 +69,72 @@ Resources
 
 .. |link_w3fools| raw:: html
 
-    <a href="https://www.w3fools.com/" target="_blank">W3Fools</a>
+    <a href="https://www.w3fools.com/" rel="external noopener noreferrer">W3Fools</a>
 
 .. |link_w3c| raw:: html
 
-    <a href="https://en.wikipedia.org/wiki/World_Wide_Web_Consortium" target="_blank">W3C</a>
+    <a href="https://en.wikipedia.org/wiki/World_Wide_Web_Consortium" rel="external noopener noreferrer">W3C</a>
 
 .. |link_html5rocks| raw:: html
 
-    <a href="https://www.html5rocks.com/en/" target="_blank">HTML5 Rocks</a>
+    <a href="https://www.html5rocks.com/en/" rel="external noopener noreferrer">HTML5 Rocks</a>
 
 .. |link_mozdev| raw:: html
 
-    <a href="https://developer.mozilla.org/en-US/" target="_blank">Mozilla Developer Network</a>
+    <a href="https://developer.mozilla.org/en-US/" rel="external noopener noreferrer">Mozilla Developer Network</a>
 
 .. |link_css3| raw:: html
 
-    <a href="https://www.css3.info/" target="_blank">CSS3</a>
+    <a href="https://www.css3.info/" rel="external noopener noreferrer">CSS3</a>
 
 .. |link_xml_wiki| raw:: html
 
-    <a href="https://en.wikipedia.org/wiki/XML" target="_blank">XML (wiki)</a>
+    <a href="https://en.wikipedia.org/wiki/XML" rel="external noopener noreferrer">XML (wiki)</a>
 
 .. |link_xml_tutorial| raw:: html
 
-    <a href="https://www.quackit.com/xml/tutorial/" target="_blank">XML tutorial</a>
+    <a href="https://www.quackit.com/xml/tutorial/" rel="external noopener noreferrer">XML tutorial</a>
 
 .. |link_json_wiki| raw:: html
 
-    <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON (wiki)</a>
+    <a href="https://en.wikipedia.org/wiki/JSON" rel="external noopener noreferrer">JSON (wiki)</a>
 
 .. |link_json_tutorial| raw:: html
 
-    <a href="https://www.copterlabs.com/blog/json-what-it-is-how-it-works-how-to-use-it/" target="_blank">JSON tutorial</a>
+    <a href="https://www.copterlabs.com/blog/json-what-it-is-how-it-works-how-to-use-it/" rel="external noopener noreferrer">JSON tutorial</a>
 
 .. |link_django_tut| raw:: html
 
-    <a href="https://docs.djangoproject.com/en/latest/intro/tutorial01/" target="_blank">Django tutorial</a>
+    <a href="https://docs.djangoproject.com/en/latest/intro/tutorial01/" rel="external noopener noreferrer">Django tutorial</a>
 
 .. |link_pyramid| raw:: html
 
-    <a href="https://www.pylonsproject.org/" target="_blank">Pyramid</a>
+    <a href="https://www.pylonsproject.org/" rel="external noopener noreferrer">Pyramid</a>
 
 .. |link_flask| raw:: html
 
-    <a href="https://flask.pocoo.org/" target="_blank">Flask</a>
+    <a href="https://flask.pocoo.org/" rel="external noopener noreferrer">Flask</a>
 
 .. |link_falcon| raw:: html
 
-    <a href="https://falconframework.org/" target="_blank">Falcon</a>
+    <a href="https://falconframework.org/" rel="external noopener noreferrer">Falcon</a>
 
 .. |link_learnjs| raw:: html
 
-    <a href="https://www.learn-js.org/" target="_blank">learn-js</a>
+    <a href="https://www.learn-js.org/" rel="external noopener noreferrer">learn-js</a>
 
 .. |link_jquery| raw:: html
 
-    <a href="https://jquery.com/" target="_blank">jQuery</a>
+    <a href="https://jquery.com/" rel="external noopener noreferrer">jQuery</a>
 
 .. |link_bootstrap| raw:: html
 
-    <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>
+    <a href="https://getbootstrap.com/" rel="external noopener noreferrer">Bootstrap</a>
 
 .. |link_lessc| raw:: html
 
-    <a href="https://lesscss.org/" target="_blank">LESS CSS</a>
+    <a href="https://lesscss.org/" rel="external noopener noreferrer">LESS CSS</a>
 
 .. |link_guni_uwsgi| raw:: html
 
-    <a href="https://cramer.io/2013/06/27/serving-python-web-applications/" target="_blank">hosting Django (gunicorn + uwsgi)</a>
+    <a href="https://cramer.io/2013/06/27/serving-python-web-applications/" rel="external noopener noreferrer">hosting Django (gunicorn + uwsgi)</a>

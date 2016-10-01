@@ -38,16 +38,16 @@ of the environment.
 
 .. |link_putty| raw:: html
 
-    <a href="https://www.putty.org/" target="_blank">PuTTY/Pageant</a>
+    <a href="https://www.putty.org/" rel="external noopener noreferrer">PuTTY/Pageant</a>
 
 .. |link_openvpn| raw:: html
 
-    <a href="https://openvpn.net/" target="_blank">OpenVPN</a>
+    <a href="https://openvpn.net/" rel="external noopener noreferrer">OpenVPN</a>
 
 .. |link_sublime3| raw:: html
 
-    <a href="https://www.sublimetext.com/3" target="_blank">Sublime Text 3</a>
+    <a href="https://www.sublimetext.com/3" rel="external noopener noreferrer">Sublime Text 3</a>
 
 .. |link_ff_addons| raw:: html
 
-    <a href="https://addons.mozilla.org/en-US/firefox/" target="_blank">Firefox Add-Ons</a>
+    <a href="https://addons.mozilla.org/en-US/firefox/" rel="external noopener noreferrer">Firefox Add-Ons</a>

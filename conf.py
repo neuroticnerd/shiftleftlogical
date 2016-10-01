@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
 
+# import datetime
 #
 # Shift Left Logical documentation build configuration file, created by
 # sphinx-quickstart on Mon Sep 26 16:16:30 2016.
@@ -80,7 +81,7 @@ language = None
 # There are two options for replacing |today|: either, set today to some
 # non-false value, then it is used, or today_fmt is used as the format
 # for a strftime call.
-# today = ''
+# today = datetime.datetime.now()
 today_fmt = ANSI_DATE_FMT
 
 # List of patterns, relative to source directory, that match files and
