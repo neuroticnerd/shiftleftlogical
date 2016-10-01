@@ -57,19 +57,19 @@ write for the old and try to make it future-compatible.
 
 .. |link_thinkpython| raw:: html
 
-    <a href="https://greenteapress.com/wp/think-python-2e/" rel="external noopener noreferrer">Think Python</a>
+    <a href="http://greenteapress.com/wp/think-python-2e/" rel="external noopener noreferrer">Think Python</a>
 
 .. |link_httlacspy3| raw:: html
 
-    <a href="https://openbookproject.net/thinkcs/python/english3e/" rel="external noopener noreferrer">How to Think Like a Computer Scientist: Python 3</a>
+    <a href="http://openbookproject.net/thinkcs/python/english3e/" rel="external noopener noreferrer">How to Think Like a Computer Scientist: Python 3</a>
 
 .. |link_thinkcs_old| raw:: html
 
-    <a href="https://www.greenteapress.com/thinkpython/thinkCSpy/" rel="external noopener noreferrer">previous official edition</a>
+    <a href="http://www.greenteapress.com/thinkpython/thinkCSpy/" rel="external noopener noreferrer">previous official edition</a>
 
 .. |link_pycourse| raw:: html
 
-    <a href="https://www.python-course.eu/course.php" rel="external noopener noreferrer">python course</a>
+    <a href="http://www.python-course.eu/course.php" rel="external noopener noreferrer">python course</a>
 
 .. |link_pyhardway| raw:: html
 
@@ -81,11 +81,11 @@ write for the old and try to make it future-compatible.
 
 .. |link_py4fun| raw:: html
 
-    <a href="https://www.openbookproject.net/py4fun/" rel="external noopener noreferrer">Python 4 Fun</a>
+    <a href="http://www.openbookproject.net/py4fun/" rel="external noopener noreferrer">Python 4 Fun</a>
 
 .. |link_pynlp| raw:: html
 
-    <a href="https://www.nltk.org/book/" rel="external noopener noreferrer">Natural Language Processing with Python</a>
+    <a href="http://www.nltk.org/book/" rel="external noopener noreferrer">Natural Language Processing with Python</a>
 
 .. |link_intro_py| raw:: html
 

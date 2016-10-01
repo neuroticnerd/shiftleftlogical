@@ -36,7 +36,7 @@ Things to Investigate
 
 .. |link_ocwc| raw:: html
 
-    <a href="https://www.ocwconsortium.org/" rel="external noopener noreferrer">Open Courseware Consortium</a>
+    <a href="http://www.ocwconsortium.org/" rel="external noopener noreferrer">Open Courseware Consortium</a>
 
 .. |link_udacity| raw:: html
 

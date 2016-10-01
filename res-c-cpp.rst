@@ -44,19 +44,19 @@ You should also be aware of the |link_cbookguide|, however, just keep in mind th
 
 .. |link_cbook| raw:: html
 
-    <a href="https://publications.gbdirect.co.uk/c_book/" rel="external noopener noreferrer">The C Book</a>
+    <a href="http://publications.gbdirect.co.uk/c_book/" rel="external noopener noreferrer">The C Book</a>
 
 .. |link_cppsite| raw:: html
 
-    <a href="https://www.cplusplus.com/" rel="external noopener noreferrer">CPlusPlus</a>
+    <a href="http://www.cplusplus.com/" rel="external noopener noreferrer">CPlusPlus</a>
 
 .. |link_cstandard| raw:: html
 
-    <a href="https://www.knosof.co.uk/cbook/cbook.html" rel="external noopener noreferrer">The New C Standard</a>
+    <a href="http://www.knosof.co.uk/cbook/cbook.html" rel="external noopener noreferrer">The New C Standard</a>
 
 .. |link_matterscomp| raw:: html
 
-    <a href="https://www.jjj.de/fxt/fxtbook.pdf" rel="external noopener noreferrer">Matters Computational</a>
+    <a href="http://www.jjj.de/fxt/fxtbook.pdf" rel="external noopener noreferrer">Matters Computational</a>
 
 .. |link_cppannotations| raw:: html
 

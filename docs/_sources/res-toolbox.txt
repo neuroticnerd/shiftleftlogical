@@ -38,7 +38,7 @@ of the environment.
 
 .. |link_putty| raw:: html
 
-    <a href="https://www.putty.org/" rel="external noopener noreferrer">PuTTY/Pageant</a>
+    <a href="http://www.putty.org/" rel="external noopener noreferrer">PuTTY/Pageant</a>
 
 .. |link_openvpn| raw:: html
 

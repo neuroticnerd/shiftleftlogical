@@ -60,7 +60,7 @@ The learning curve may be slightly steeper, but it serves its purpose well.
 
 .. |link_git_tuts| raw:: html
 
-    <a href="https://sixrevisions.com/resources/git-tutorials-beginners/" rel="external noopener noreferrer">Git tutorials</a>
+    <a href="http://sixrevisions.com/resources/git-tutorials-beginners/" rel="external noopener noreferrer">Git tutorials</a>
 
 .. |link_git_begin| raw:: html
 
@@ -72,7 +72,7 @@ The learning curve may be slightly steeper, but it serves its purpose well.
 
 .. |link_git_tut| raw:: html
 
-    <a href="https://www.vogella.com/tutorials/Git/article.html" rel="external noopener noreferrer">Git tutorial</a>
+    <a href="http://www.vogella.com/tutorials/Git/article.html" rel="external noopener noreferrer">Git tutorial</a>
 
 .. |link_github| raw:: html
 
@@ -80,7 +80,7 @@ The learning curve may be slightly steeper, but it serves its purpose well.
 
 .. |link_gitextensions| raw:: html
 
-    <a href="https://code.google.com/p/gitextensions/" rel="external noopener noreferrer">GitExtensions</a>
+    <a href="https://gitextensions.github.io/" rel="external noopener noreferrer">GitExtensions</a>
 
 .. |link_sourcetree| raw:: html
 

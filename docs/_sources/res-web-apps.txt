@@ -69,7 +69,7 @@ Resources
 
 .. |link_w3fools| raw:: html
 
-    <a href="https://www.w3fools.com/" rel="external noopener noreferrer">W3Fools</a>
+    <a href="http://www.w3fools.com/" rel="external noopener noreferrer">W3Fools</a>
 
 .. |link_w3c| raw:: html
 
@@ -85,7 +85,7 @@ Resources
 
 .. |link_css3| raw:: html
 
-    <a href="https://www.css3.info/" rel="external noopener noreferrer">CSS3</a>
+    <a href="http://www.css3.info/" rel="external noopener noreferrer">CSS3</a>
 
 .. |link_xml_wiki| raw:: html
 
@@ -93,7 +93,7 @@ Resources
 
 .. |link_xml_tutorial| raw:: html
 
-    <a href="https://www.quackit.com/xml/tutorial/" rel="external noopener noreferrer">XML tutorial</a>
+    <a href="http://www.quackit.com/xml/tutorial/" rel="external noopener noreferrer">XML tutorial</a>
 
 .. |link_json_wiki| raw:: html
 
@@ -133,8 +133,8 @@ Resources
 
 .. |link_lessc| raw:: html
 
-    <a href="https://lesscss.org/" rel="external noopener noreferrer">LESS CSS</a>
+    <a href="http://lesscss.org/" rel="external noopener noreferrer">LESS CSS</a>
 
 .. |link_guni_uwsgi| raw:: html
 
-    <a href="https://cramer.io/2013/06/27/serving-python-web-applications/" rel="external noopener noreferrer">hosting Django (gunicorn + uwsgi)</a>
+    <a href="http://cramer.io/2013/06/27/serving-python-web-applications/" rel="external noopener noreferrer">hosting Django (gunicorn + uwsgi)</a>
