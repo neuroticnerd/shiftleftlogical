@@ -5,7 +5,7 @@ Aside from making sure you don't neglect the official documentation of the
 languages and tools you are using for a
 project, don't forget that Google/<insert-favorite-search-engine> is your best
 friend! Many languages, libraries, or frameworks also have their own respective
-forums and/or IRC channels where very knowledgeable people can answer questions
+forums and/or IRC channels where more knowledgeable people can answer questions
 you might come across.
 
 

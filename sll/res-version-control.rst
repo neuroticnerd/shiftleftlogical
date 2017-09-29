@@ -6,6 +6,11 @@ There are a number of options for version control, even a good number that are
 free to use or open source. My choice is always Git, but to each their own.
 The learning curve may be slightly steeper, but it serves its purpose well.
 
+.. toctree::
+    :maxdepth: 2
+
+    git-best-practices
+
 |link_git|
     Git is a distributed version control system and though it can take a
     bit of getting used to, it is extremely powerful for any size project; Git

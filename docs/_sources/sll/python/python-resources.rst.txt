@@ -1,18 +1,5 @@
-
-Python
-======
-
-Unfortunately, there still exists somewhat of a schism between the Python 2
-and Python 3 camps, but the fact of the matter is that Python 2 will only be
-officially supported still for a finite amount of time before Python 3 will
-become the de-facto standard. In my opinion, if given a choice, always learn
-things the Python 3 way. In quite a few cases, writing clean Python 3 code is
-inherently backward-compatible with the latest Python 2 (v2.7.12 at time of
-writing), or if it isn’t, takes very little effort to make it
-backward-compatible. I strongly feel it is far better to write code for the
-current and future with a few tweaks to be compatible with the old, than to
-write for the old and try to make it future-compatible.
-
+Python Resources
+======================
 
 |link_learnpython|
     Pretty awesome site really, I wish I had known about
@@ -94,20 +81,3 @@ write for the old and try to make it future-compatible.
 .. |link_nonprog_guide| raw:: html
 
     <a href="https://wiki.python.org/moin/BeginnersGuide/NonProgrammers" rel="external noopener noreferrer">Non-programmers Guide to Python Programming</a>
-
-
-Things to Note
---------------
-
-Some resources may not be completely up-to-date, so keep these things in mind:
-
-*   You should almost always use the new style string format
-    (``'{0}'.format(...)``) method over interpolation (``'%s %s' % (str1, str2)``)
-
-*   Try to use the standard library ``logging`` module over the ``print(...)`` function
-
-*   If you have to resort to the ``print(...)`` function, always use it as a function
-    (e.g. don’t use the old syntax of ``print ‘here is text’`` use
-    ``print(‘here is text’)``)
-
-I’m also working on a guide for dealing with Python development environment setups in Windows; it’s a little trickier than it should be since many Python-related tools and modules were written with Unix platforms as a priority.

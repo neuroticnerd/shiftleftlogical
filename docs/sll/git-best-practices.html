@@ -1,0 +1,213 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Introduction &#8212; Shift Left Logical v1.0.0</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="General Resources" href="res-general.html" />
+    <link rel="prev" title="Version Control" href="res-version-control.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>Please begin by reading and understanding the following article (don’t hesitate
+to ask questions if you need to); it is one of the most articulate and
+well-formed explanations of a useful git workflow that I have found to date:
+<a class="reference external" href="http://nvie.com/posts/a-successful-git-branching-model/">Git Workflow</a></p>
+<div class="section" id="key-branching-differences">
+<h2>Key Branching Differences<a class="headerlink" href="#key-branching-differences" title="Permalink to this headline">¶</a></h2>
+<p>The article above outlines the essence of what we will be following, but with
+some minor differences:</p>
+<ul class="simple">
+<li>We will not be merging anything into the master branch until we fully
+release into production mode</li>
+<li>We will not be using any hotfix branches until we fully release into
+production mode</li>
+<li>We may decide not to use release branches and opt to have releases be
+merges from develop instead (but they must be tagged!); once more
+automation tools are added to the project, it may be useful to have release
+or staging branches which can be automatically deployed to a QA environment
+before being released</li>
+</ul>
+<p>This means that currently, the important aspects of the flow are the develop,
+and feature branches, along with utilizing Pull Requests to merge features into
+develop.</p>
+</div>
+</div>
+<div class="section" id="pull-requests">
+<h1>Pull Requests<a class="headerlink" href="#pull-requests" title="Permalink to this headline">¶</a></h1>
+<p>There may be certain exceptions, however, as a general rule, please always use
+a Pull Request to get review or approval before merging anything into any
+branch; when creating the PR, make sure to check that the branch you are
+merging into is set correctly and that you tag or mention anyone who might need
+to provide input on the PR! If we want to do squash merges for feature branches
+or non-default merges, then we will have to opt not to use the “Merge” button
+provided in Bitbucket and handle our merges manually once a PR has been
+approved.</p>
+<div class="section" id="feature-branch-naming-conventions">
+<h2>Feature Branch Naming Conventions<a class="headerlink" href="#feature-branch-naming-conventions" title="Permalink to this headline">¶</a></h2>
+<p>For the context of our projects, feature branches are meant to semantically
+encompass any task, feature, improvement, etc. that we are working on in
+development. These feature branches should only be merged to develop, never
+anything else.</p>
+<p>Unless there is a specific reason not to, there should almost always be a JIRA
+task for what is being worked on; as long as there is a JIRA task, you should
+always prefix your branch name with the task identifier. To use the task for
+creating this documentation as an example, I would create a branch off of
+develop called “DSNP-44-document-git-workflow”. This allows JIRA to
+automatically associate that branch with the task when you push commits in the
+branch to the origin.</p>
+</div>
+</div>
+<div class="section" id="commit-messages">
+<h1>Commit Messages<a class="headerlink" href="#commit-messages" title="Permalink to this headline">¶</a></h1>
+<p>Start by reading
+<a class="reference external" href="http://chris.beams.io/posts/git-commit/">this article</a>
+which explains a concrete stance on the matter that will be discussed below.</p>
+<p>Consistent formatting is important for commit messages. We will not necessarily
+be enforcing everything exactly as written in the above article, but please
+follow the “seven rules of a great commit message” that it outlines with the
+exception of character wrapping, and one additional rule specific to our team.
+As shown below, our commit message rules modify the character limits. For
+example, if your subject line is 55 or 60 characters… we are not going to be
+strict about enforcing a 50 character limit. However, if your subject line is
+70 or 100 characters… please find a way to reduce it, and add a body to the
+commit message if there is additional information.</p>
+<p>Commit Message Guidelines:</p>
+<ul class="simple">
+<li>Separate subject from body with a blank line</li>
+<li>Limit the subject line to ~60 characters</li>
+<li>Capitalize the subject line</li>
+<li>Do not end the subject line with punctuation</li>
+<li>Use the imperative mood in the subject line</li>
+<li>Wrap the body at ~80 characters</li>
+<li>Use the body to explain what and why, not how</li>
+<li>Prefix your subject line with the JIRA task ID
+(e.g. “DSNP-44 Add git workflow documentation”)</li>
+</ul>
+<p>Smart Commits:</p>
+<p>&lt;coming soon (not currently enabled for our project)!&gt;</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Shift Left Logical</a></h1>
+
+
+
+<p class="blurb">A catalog of free resources, articles, and references for topics in computing and programming which I hope can help others in their journey for knowledge.</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=neuroticnerd&repo=shiftleftlogical&type=star&count=True&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="res-python.html">Python</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="res-version-control.html">Version Control</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#key-branching-differences">Key Branching Differences</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#pull-requests">Pull Requests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#feature-branch-naming-conventions">Feature Branch Naming Conventions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#commit-messages">Commit Messages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="res-general.html">General Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="res-comp-sci.html">Computer Science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="res-c-cpp.html">C/C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="res-web-apps.html">Web Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="res-toolbox.html">Developer’s Toolbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="res-courses.html">Course-Oriented Learning</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="res-version-control.html">Version Control</a><ul>
+      <li>Previous: <a href="res-version-control.html" title="previous chapter">Version Control</a></li>
+      <li>Next: <a href="res-general.html" title="next chapter">General Resources</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Bryce Eggleton.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/sll/git-best-practices.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
