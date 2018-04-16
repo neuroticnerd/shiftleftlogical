@@ -1,0 +1,239 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Python and MongoDB &#8212; Shift Left Logical v1.0.0</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Version Control" href="../res-version-control.html" />
+    <link rel="prev" title="Python Tips and Tricks" href="python-tips-and-tricks.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="python-and-mongodb">
+<h1>Python and MongoDB<a class="headerlink" href="#python-and-mongodb" title="Permalink to this headline">¶</a></h1>
+<p>This primarily refers to usage of the <code class="docutils literal"><span class="pre">pymongo</span></code> package, however, the
+concepts apply to using MongoDB from Python in general. Interacting with
+MongoDB from Python has a couple of easy traps to fall into, and this looks
+at one in particular and how to avoid the pitfall via proper usage of indexes
+and careful construction of queries.</p>
+<p>When querying MongoDB in general, it will attempt to use indexes based on the
+components of your query, <em>in the order you specify them</em>. That is, if you
+construct a query that looks as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">docs</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s2">&quot;stuff&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;things&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>If you use that as the filter for a <code class="docutils literal"><span class="pre">.find()</span></code> call, MongoDB will look for a
+compound index where the fields are specified in the order <code class="docutils literal"><span class="pre">(stuff,</span> <span class="pre">things)</span></code>.
+If a compound index exists with both fields but the ordering is instead
+<code class="docutils literal"><span class="pre">(things,</span> <span class="pre">stuff)</span></code>, then the index <em>may not be used</em>! I have experienced a
+number of situations where the query planner will select the correct index
+despite providing the query fields in a different order, however, that behavior
+should not be relied upon.</p>
+<p>NOTE 1: make sure that you create compound indexes on your MongoDB collections
+with the fields specified <em>in the order which you want to query them in</em> and
+that you construct query filters using the same ordering as your indexes!</p>
+<p>Great, so we understand that ordering is important on the MongoDB side of the
+equation, but there’s just one little problem. Almost all examples of using
+a library like <code class="docutils literal"><span class="pre">pymongo</span></code> to interact with MongoDB from Python use plain old
+<code class="docutils literal"><span class="pre">dict</span></code> objects to construct query filters; the thing is, Python <code class="docutils literal"><span class="pre">dict</span></code>
+objects are inherently an unordered data structure and thus provide no
+guarantee of maintaining any specific ordering. While that is not entirely true
+for Python 3.6+ (but that is a whole different topic) I would still argue that
+using the approach explained below conforms better to best practice and more
+explicitly communicates the intent of what the code is doing.</p>
+<p>If the filter only contains
+a single field, then there won’t be any issues because there aren’t multiple
+fields. However, as soon as you introduce multiple fields into a filter using
+a normal <code class="docutils literal"><span class="pre">dict</span></code>, the order in which they might be presented to MongoDB
+becomes non-deterministic. This means that our example query might actually
+be serialized at runtime to:</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;things&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;stuff&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Which could prevent MongoDB from utilizing a compound index on
+<code class="docutils literal"><span class="pre">(stuff,</span> <span class="pre">things)</span></code>. That might not be an issue on very small
+collections, but try doing that on hundreds of thousands or millions of
+documents and the queries will start taking orders of magnitude longer.</p>
+<p>There are certain edge-cases with some versions of Python where depending on
+whether hash randomization is enabled or not the ordering of <code class="docutils literal"><span class="pre">dict``s</span> <span class="pre">may</span> <span class="pre">be</span>
+<span class="pre">preserved</span> <span class="pre">(or</span> <span class="pre">at</span> <span class="pre">least</span> <span class="pre">deterministic),</span> <span class="pre">however,</span> <span class="pre">the</span> <span class="pre">point</span> <span class="pre">here</span> <span class="pre">is</span> <span class="pre">that</span> <span class="pre">things</span>
+<span class="pre">like</span> <span class="pre">this</span> <span class="pre">**should</span> <span class="pre">not**</span> <span class="pre">ever</span> <span class="pre">be</span> <span class="pre">relied</span> <span class="pre">upon</span> <span class="pre">for</span> <span class="pre">ordering</span> <span class="pre">since</span> <span class="pre">the</span> <span class="pre">``dict</span></code>
+as a data structure provides no guarantees or ordering.</p>
+<p>It is unfortunate that the pymongo documentation is not clearer on this point;
+though it does mention it, you essentially have to read a section about a
+method which takes a filter (like the collection
+<a class="reference external" href="http://api.mongodb.com/python/current/api/pymongo/collection.html#pymongo.collection.Collection.find">find</a>
+method), and notice that the <code class="docutils literal"><span class="pre">filter</span></code> argument says:</p>
+<blockquote>
+<div>filter (optional): a SON object specifying elements which must be present
+for a document to be included in the result set</div></blockquote>
+<p>Well it says nothing about <code class="docutils literal"><span class="pre">dict</span></code>… so what is a SON object? The quoted
+description above provides no clickable link in the documentation, but if you
+dig around a little more you can come across the
+<a class="reference external" href="http://api.mongodb.com/python/current/api/bson/son.html">Tools for working with SON an ordered mapping</a>
+page about the <code class="docutils literal"><span class="pre">bson.son</span></code> module which defines <code class="docutils literal"><span class="pre">SON</span></code> objects, and says
+(emphasis added by me):</p>
+<blockquote>
+<div>Regular dictionaries can be used instead of SON objects, <strong>but not when
+the order of keys is important</strong>. A SON object can be used just like a
+normal Python dictionary.</div></blockquote>
+<p>NOTE 2: now we see that filters are expected to be SON objects, or speaking
+more broadly, <code class="docutils literal"><span class="pre">dict</span></code> objects <em>can</em> be used in <em>specific cases</em>, but as a
+general rule <strong>filters are expected to be an ordered mapping</strong>.</p>
+<p>Right, so <code class="docutils literal"><span class="pre">pymongo</span></code> actually expects an ordered mapping, which makes sense
+based on the importance of ordering on the MongoDB side. How then do we ensure
+that ordering is preserved for queries? There are effectively two options;
+personally I’ve not found any compelling reasons to use <code class="docutils literal"><span class="pre">bson.son.SON</span></code> and
+prefer to use the already-familiar option that is built right into Python,
+<code class="docutils literal"><span class="pre">collections.OrderedDict</span></code>. <code class="docutils literal"><span class="pre">OrderedDict</span></code> acts almost exactly like a normal
+<code class="docutils literal"><span class="pre">dict</span></code> object, however, it also preserves the order in which keys were
+inserted. Using this approach, our example query filter could instead be
+constructed with:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+
+<span class="n">query_filter</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+<span class="n">query_filter</span><span class="p">[</span><span class="s1">&#39;stuff&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">query_filter</span><span class="p">[</span><span class="s1">&#39;things&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">docs</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">query_filter</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It can also be built directly by utilizing the constructor but you have to
+keep in mind that initializing data by <em>passing keyword arguments or another
+dict object will not preserve ordering</em>. This is because <code class="docutils literal"><span class="pre">OrderedDict</span></code> can
+only preserve what ordering it has access to, and neither kwargs nor a <code class="docutils literal"><span class="pre">dict</span></code>
+provide an order. Instead, you will need to pass it an <em>iterable</em> of some sort
+(such as a list, tuple, or generator) of key-value pairs. Constructing the
+example filter in this manner would look like:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+
+<span class="n">query_filter</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">([(</span><span class="s1">&#39;stuff&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;things&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)])</span>
+
+<span class="n">docs</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">query_filter</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>NOTE 3: initializing it may not look as clean or pretty as a <code class="docutils literal"><span class="pre">dict</span></code>, but you
+should almost always use <code class="docutils literal"><span class="pre">OrderedDict</span></code> for performing MongoDB queries in
+Python; you can initialize an <code class="docutils literal"><span class="pre">OrderedDict</span></code> properly by passing an iterable
+of key-value pairs to the constructor. This will ensure that ordering is
+preserved and ensure compound indexes with the same order will be utilized.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Shift Left Logical</a></h1>
+
+
+
+<p class="blurb">A catalog of free resources, articles, and references for topics in computing and programming which I hope can help others in their journey for knowledge.</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=neuroticnerd&repo=shiftleftlogical&type=star&count=True&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../res-python.html">Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="python-why.html">Why Learn Python?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-resources.html">Python Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-best-practices.html">Code Style Guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-virtual-env.html">Utilizing virtualenv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-tips-and-tricks.html">Python Tips and Tricks</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Python and MongoDB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../res-version-control.html">Version Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../res-general.html">General Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../res-comp-sci.html">Computer Science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../res-c-cpp.html">C/C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../res-web-apps.html">Web Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../res-toolbox.html">Developer’s Toolbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../res-courses.html">Course-Oriented Learning</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../res-python.html">Python</a><ul>
+      <li>Previous: <a href="python-tips-and-tricks.html" title="previous chapter">Python Tips and Tricks</a></li>
+      <li>Next: <a href="../res-version-control.html" title="next chapter">Version Control</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Bryce Eggleton.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../../_sources/sll/python/python-mongodb.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

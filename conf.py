@@ -59,7 +59,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Shift Left Logical'
-copyright = '2017, Bryce Eggleton'
+copyright = '2018, Bryce Eggleton'
 author = 'Bryce Eggleton'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -92,6 +92,7 @@ exclude_patterns = [
     'README.rst',
     'Thumbs.db',
     '.DS_Store',
+    'staging/*',
 ]
 
 # The reST default role (used for this markup: `text`) to use for all
@@ -296,8 +297,13 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'ShiftLeftLogical.tex', 'Shift Left Logical Documentation',
-     'Bryce Eggleton', 'manual'),
+    (
+        master_doc,
+        'ShiftLeftLogical.tex',
+        'Shift Left Logical Documentation',
+        'Bryce Eggleton',
+        'manual',
+    ),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -338,8 +344,13 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'shiftleftlogical', 'Shift Left Logical Documentation',
-     [author], 1)
+    (
+        master_doc,
+        'shiftleftlogical',
+        'Shift Left Logical Documentation',
+        [author],
+        1,
+    ),
 ]
 
 # If true, show URL addresses after external links.
@@ -353,9 +364,15 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'ShiftLeftLogical', 'Shift Left Logical Documentation',
-     author, 'ShiftLeftLogical', 'One line description of project.',
-     'Miscellaneous'),
+    (
+        master_doc,
+        'ShiftLeftLogical',
+        'Shift Left Logical Documentation',
+        author,
+        'ShiftLeftLogical',
+        'One line description of project.',
+        'Miscellaneous',
+    ),
 ]
 
 # Documents to append as an appendix to all manuals.

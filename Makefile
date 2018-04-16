@@ -49,6 +49,15 @@ help:
 clean:
 	rm -rf $(BUILDDIR)/*
 
+.PHONY: cleanhtml
+cleanhtml:
+	rm -rf $(HTMLDIR)/*
+
+.PHONY: purge
+purge:
+	rm -rf $(BUILDDIR)/*
+	rm -rf $(HTMLDIR)/*
+
 .PHONY: html
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(HTMLDIR)

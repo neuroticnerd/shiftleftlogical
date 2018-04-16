@@ -11,5 +11,5 @@ certain areas, but tries to maintain an overall agnostic approach.
 
 cd ~/git/shiftleftlogical
 workon shiftleftlogical
-pip install sphinx_bootstrap_theme
-make html
+pip install --upgrade -r requirements.txt
+make purge && make html

@@ -11,6 +11,7 @@ Python
     python/python-best-practices
     python/python-virtual-env
     python/python-tips-and-tricks
+    python/python-mongodb
 
 
 There are already other places where advanced Python material can be found,
