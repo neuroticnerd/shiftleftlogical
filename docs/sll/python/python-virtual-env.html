@@ -1,27 +1,17 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Utilizing virtualenv &#8212; Shift Left Logical v1.0.0</title>
+    <meta charset="utf-8" />
+    <title>Utilizing virtualenv &#8212; Shift Left Logical v1.1.0</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Python Tips and Tricks" href="python-tips-and-tricks.html" />
@@ -32,13 +22,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body>
+  </head><body>
   
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="utilizing-virtualenv">
@@ -61,27 +52,27 @@ Python executable then you can create a virtual environment for that version.</e
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>First things first, make sure that you have the
+<li><p>First things first, make sure that you have the
 <a class="reference external" href="https://www.python.org/downloads/">latest version of Python 2 or Python 3</a>
 downloaded and installed (or just skip the manual download
-by installing via the appropriate package manager for your OS)</li>
-<li>Next you’ll need to make sure that
+by installing via the appropriate package manager for your OS)</p></li>
+<li><p>Next you’ll need to make sure that
 <a class="reference external" href="https://pip.pypa.io/en/stable/installing/">pip is installed</a>
-(it comes automatically with Python 2 &gt;= 2.7.9 and Python 3 &gt;= 3.4)</li>
-<li>Ensure that pip and setuptools are updated: pip install -U pip setuptools</li>
+(it comes automatically with Python 2 &gt;= 2.7.9 and Python 3 &gt;= 3.4)</p></li>
+<li><p>Ensure that pip and setuptools are updated: pip install -U pip setuptools</p></li>
 </ul>
 </div>
 <div class="section" id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <p>Next we’ll need to install the virtual environment packages:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>pip install -U virtualenvwrapper virtualenv
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -U virtualenvwrapper virtualenv
 </pre></div>
 </div>
 <p>WINDOWS: if you are doing this on a windows box you will instead need to
 install virtualenvwrapper-win and follow the
 <a class="reference external" href="https://github.com/davidmarble/virtualenvwrapper-win/">directions here</a>
 (good luck!):</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>pip install -U virtualenvwrapper-win virtualenv
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -U virtualenvwrapper-win virtualenv
 </pre></div>
 </div>
 <p>While virtualenv can be used by itself, it is far easier to use the wrapper
@@ -96,8 +87,8 @@ since virtualenvwrapper, and hence this whole section, is only for
 Bourne-compatible shells (have fun!)</p>
 <p>Now that everything is installed, we need to configure our environment to
 actually utilize it. The following needs to be added somewhere in your
-<code class="docutils literal"><span class="pre">~/.bash_profile</span></code> or your shell equivalent file:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1">#######################################################</span>
+<code class="docutils literal notranslate"><span class="pre">~/.bash_profile</span></code> or your shell equivalent file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#######################################################</span>
 <span class="c1">### virtualenv setup and shortcuts</span>
 <span class="nb">export</span> <span class="nv">PIP_REQUIRE_VIRTUALENV</span><span class="o">=</span><span class="nb">true</span>
 <span class="nb">export</span> <span class="nv">WORKON_HOME</span><span class="o">=</span><span class="s2">&quot;~/.envs&quot;</span>
@@ -115,7 +106,7 @@ packages from being installed globally unless a specific flag is passed to pip
 to force it install anyway. What this does is it reminds you if you forget to
 activate a virtual env, and prevents packages from being installed globally
 unless you specifically go out of your way to do so.</p>
-<p>The <code class="docutils literal"><span class="pre">export</span> <span class="pre">WORKON_HOME=&quot;~/.envs&quot;</span></code> tells virtualenvwrapper the location where
+<p>The <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">WORKON_HOME=&quot;~/.envs&quot;</span></code> tells virtualenvwrapper the location where
 you want it to create all of your virtual environments (this should NOT be
 within a git repository as the env should NOT be committed with code). Modify
 this export as needed for wherever you want it to use as the location.</p>
@@ -129,19 +120,19 @@ are not strictly required if you do not wish to add them.</p>
 <div class="section" id="managing-envs">
 <h2>Managing envs<a class="headerlink" href="#managing-envs" title="Permalink to this headline">¶</a></h2>
 <p>Basic usage for creating a virtual env is:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mkvirtualenv</span> <span class="o">&lt;</span><span class="n">env</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkvirtualenv</span> <span class="o">&lt;</span><span class="n">env</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mkvirtualenv</span> <span class="n">example</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkvirtualenv</span> <span class="n">example</span>
 </pre></div>
 </div>
 <p>Or using the alias:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mkvenv</span> <span class="n">example</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkvenv</span> <span class="n">example</span>
 </pre></div>
 </div>
 <p>You can similarly list or remove environments using the aliases:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">lsvenv</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lsvenv</span>
 <span class="n">rmvenv</span> <span class="n">example</span>
 </pre></div>
 </div>
@@ -150,11 +141,11 @@ are not strictly required if you do not wish to add them.</p>
 <h2>Creating a Python 3 env<a class="headerlink" href="#creating-a-python-3-env" title="Permalink to this headline">¶</a></h2>
 <p>The alias from above can be used to quickly create a virtual env with the
 system install version of Python 3:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mkvenv3</span> <span class="n">example_env</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkvenv3</span> <span class="n">example_env</span>
 </pre></div>
 </div>
 <p>Or using just virtualenvwrapper without the alias:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mkvirtualenv</span> <span class="o">-</span><span class="n">p</span> <span class="n">python3</span> <span class="n">example_env</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkvirtualenv</span> <span class="o">-</span><span class="n">p</span> <span class="n">python3</span> <span class="n">example_env</span>
 </pre></div>
 </div>
 </div>
@@ -162,7 +153,7 @@ system install version of Python 3:</p>
 <h2>Using specific Python versions<a class="headerlink" href="#using-specific-python-versions" title="Permalink to this headline">¶</a></h2>
 <p>To use a specific version of Python in a virtual env, you need to explicitly
 tell it which one via the -p flag:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>mkvirtualenv -p path/to/specific/version/of/python
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkvirtualenv -p path/to/specific/version/of/python
 mkvenv -p path/to/specific/version/of/python
 </pre></div>
 </div>
@@ -171,7 +162,7 @@ mkvenv -p path/to/specific/version/of/python
 <h2>Activating/deactivating an env<a class="headerlink" href="#activating-deactivating-an-env" title="Permalink to this headline">¶</a></h2>
 <p>When creating a virtual env, it will automatically be activated, however, to
 activate an env that is not currently active, you use the workon command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">workon</span> <span class="n">example_env</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">workon</span> <span class="n">example_env</span>
 </pre></div>
 </div>
 <p>Activating a virtual env gives you access to the installed packages in the env
@@ -180,7 +171,7 @@ executable for the version of Python specified when the env was created (the
 default Python install on the system if none was specified).
 Deactivating an env</p>
 <p>Leaving an env is also very simple:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">deactivate</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">deactivate</span>
 </pre></div>
 </div>
 </div>
@@ -188,6 +179,7 @@ Deactivating an env</p>
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -196,7 +188,7 @@ Deactivating an env</p>
 
 
 
-<p class="blurb">A catalog of free resources, articles, and references for topics in computing and programming which I hope can help others in their journey for knowledge.</p>
+<p class="blurb">This is a catalog of information, resources, and pseudo-articles I've written which I hope will be helpful to others in their journey for knowledge in computing and programming.</p>
 
 
 
@@ -212,6 +204,7 @@ Deactivating an env</p>
 
 <h3>Navigation</h3>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../res-general.html">General Resources</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../res-python.html">Python</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="python-why.html">Why Learn Python?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-resources.html">Python Resources</a></li>
@@ -230,12 +223,11 @@ Deactivating an env</p>
 <li class="toctree-l2"><a class="reference internal" href="python-mongodb.html">Python and MongoDB</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../res-version-control.html">Version Control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../res-general.html">General Resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../res-comp-sci.html">Computer Science</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../res-c-cpp.html">C/C++</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../res-web-apps.html">Web Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../res-version-control.html">Version Control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../res-toolbox.html">Developer’s Toolbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../res-comp-sci.html">Computer Science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../res-web-apps.html">Web Development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../res-courses.html">Course-Oriented Learning</a></li>
 </ul>
 
@@ -251,25 +243,33 @@ Deactivating an env</p>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
         </div>
       </div>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2018, Bryce Eggleton.
+      &copy;2016-2019, Bryce Eggleton.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="../../_sources/sll/python/python-virtual-env.rst.txt"

@@ -1,44 +1,35 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Version Control &#8212; Shift Left Logical v1.0.0</title>
+    <meta charset="utf-8" />
+    <title>Version Control &#8212; Shift Left Logical v1.1.0</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '1.0.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Introduction" href="git-best-practices.html" />
-    <link rel="prev" title="Python and MongoDB" href="python/python-mongodb.html" />
+    <link rel="prev" title="C/C++" href="res-c-cpp.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body>
+  </head><body>
   
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="version-control">
@@ -59,51 +50,51 @@ The learning curve may be slightly steeper, but it serves its purpose well.</p>
 <li class="toctree-l1"><a class="reference internal" href="git-best-practices.html#commit-messages">Commit Messages</a></li>
 </ul>
 </div>
-<dl class="docutils">
-<dt><a href="https://git-scm.com/" rel="external noopener noreferrer">Git</a></dt>
-<dd><p class="first">Git is a distributed version control system and though it can take a
+<dl class="simple">
+<dt><a href="https://git-scm.com/" rel="external noopener noreferrer">Git</a></dt><dd><p>Git is a distributed version control system and though it can take a
 bit of getting used to, it is extremely powerful for any size project; Git
 is a commandline tool by itself, but there are third party GUI’s for it,
 and hosting providers for repositories.</p>
-<ul class="last simple">
-<li>Awesome list of <a href="http://sixrevisions.com/resources/git-tutorials-beginners/" rel="external noopener noreferrer">Git tutorials</a></li>
-<li><a href="https://stackoverflow.com/questions/315911/git-for-beginners-the-definitive-practical-guide" rel="external noopener noreferrer">Git for beginners</a> (stackoverflow)</li>
-<li>Simple <a href="https://www.atlassian.com/git/tutorial" rel="external noopener noreferrer">Git Tutorial</a> (Atlassian)</li>
-<li><a href="http://www.vogella.com/tutorials/Git/article.html" rel="external noopener noreferrer">Git tutorial</a></li>
+<ul class="simple">
+<li><p>Awesome list of <a href="http://sixrevisions.com/resources/git-tutorials-beginners/" rel="external noopener noreferrer">Git tutorials</a></p></li>
+<li><p><a href="https://stackoverflow.com/questions/315911/git-for-beginners-the-definitive-practical-guide" rel="external noopener noreferrer">Git for beginners</a> (stackoverflow)</p></li>
+<li><p>Simple <a href="https://www.atlassian.com/git/tutorial" rel="external noopener noreferrer">Git Tutorial</a> (Atlassian)</p></li>
+<li><p><a href="http://www.vogella.com/tutorials/Git/article.html" rel="external noopener noreferrer">Git tutorial</a></p></li>
 </ul>
 </dd>
-<dt><a href="https://github.com/" rel="external noopener noreferrer">GitHub</a></dt>
-<dd>GitHub is a web-based front-end and hosting platform for
+<dt><a href="https://github.com/" rel="external noopener noreferrer">GitHub</a></dt><dd><p>GitHub is a web-based front-end and hosting platform for
 Git repositories, and while a free account will not let you create private
 repositories, its still an amazing tool to know how to use, and I would
 even go so far as saying its worth a paid account once you start doing
 more serious programming projects (plus its a good cheap way to host all
-your code in the cloud so you can always access it)</dd>
-<dt><a href="https://gitextensions.github.io/" rel="external noopener noreferrer">GitExtensions</a></dt>
-<dd>If you happen to be struck with the misfortune of
+your code in the cloud so you can always access it)</p>
+</dd>
+<dt><a href="https://gitextensions.github.io/" rel="external noopener noreferrer">GitExtensions</a></dt><dd><p>If you happen to be struck with the misfortune of
 needing to use Windows for development, then look no further for a good
-Git GUI for the Windows OS</dd>
-<dt><a href="https://www.atlassian.com/software/sourcetree/overview" rel="external noopener noreferrer">SourceTree</a></dt>
-<dd>Possibly the best git GUI for Mac and Windows; they
+Git GUI for the Windows OS</p>
+</dd>
+<dt><a href="https://www.atlassian.com/software/sourcetree/overview" rel="external noopener noreferrer">SourceTree</a></dt><dd><p>Possibly the best git GUI for Mac and Windows; they
 want you to ‘register’ your copy but its free to do so (just give them a
-spam email address or something)</dd>
-<dt><a href="https://git.wiki.kernel.org/index.php/InterfacesFrontendsAndTools#Graphical_Interfaces" rel="external noopener noreferrer">Linux Git GUIs</a></dt>
-<dd>Here is one of the available lists of GUIs for Git;
+spam email address or something)</p>
+</dd>
+<dt><a href="https://git.wiki.kernel.org/index.php/InterfacesFrontendsAndTools#Graphical_Interfaces" rel="external noopener noreferrer">Linux Git GUIs</a></dt><dd><p>Here is one of the available lists of GUIs for Git;
 while most things I write are designed to run on Unix machines, I usually
-develop on Mac or Windows (when under duress)</dd>
-<dt><a href="https://www.syntevo.com/smartgit/" rel="external noopener noreferrer">SmartGit</a></dt>
-<dd>I have not personally tested it yet, but have heard some
-very promising anecdotes and supposedly it is free for non-commercial use</dd>
-<dt><a href="https://about.gitlab.com/" rel="external noopener noreferrer">GitLab</a></dt>
-<dd>This is an alternative to GitHub hosting with the option
+develop on Mac or Windows (when under duress)</p>
+</dd>
+<dt><a href="https://www.syntevo.com/smartgit/" rel="external noopener noreferrer">SmartGit</a></dt><dd><p>I have not personally tested it yet, but have heard some
+very promising anecdotes and supposedly it is free for non-commercial use</p>
+</dd>
+<dt><a href="https://about.gitlab.com/" rel="external noopener noreferrer">GitLab</a></dt><dd><p>This is an alternative to GitHub hosting with the option
 to download the source-code for free and self-host your git repositories;
 I’ve not spent too much time with it yet, and still prefer GitHub for the
-moment, but it has a lot going for it and continues to grow</dd>
+moment, but it has a lot going for it and continues to grow</p>
+</dd>
 </dl>
 </div>
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -112,7 +103,7 @@ moment, but it has a lot going for it and continues to grow</dd>
 
 
 
-<p class="blurb">A catalog of free resources, articles, and references for topics in computing and programming which I hope can help others in their journey for knowledge.</p>
+<p class="blurb">This is a catalog of information, resources, and pseudo-articles I've written which I hope will be helpful to others in their journey for knowledge in computing and programming.</p>
 
 
 
@@ -128,18 +119,18 @@ moment, but it has a lot going for it and continues to grow</dd>
 
 <h3>Navigation</h3>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="res-general.html">General Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="res-python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="res-c-cpp.html">C/C++</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Version Control</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="git-best-practices.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="git-best-practices.html#pull-requests">Pull Requests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="git-best-practices.html#commit-messages">Commit Messages</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="res-general.html">General Resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="res-comp-sci.html">Computer Science</a></li>
-<li class="toctree-l1"><a class="reference internal" href="res-c-cpp.html">C/C++</a></li>
-<li class="toctree-l1"><a class="reference internal" href="res-web-apps.html">Web Development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="res-toolbox.html">Developer’s Toolbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="res-comp-sci.html">Computer Science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="res-web-apps.html">Web Development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="res-courses.html">Course-Oriented Learning</a></li>
 </ul>
 
@@ -147,31 +138,39 @@ moment, but it has a lot going for it and continues to grow</dd>
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="python/python-mongodb.html" title="previous chapter">Python and MongoDB</a></li>
+      <li>Previous: <a href="res-c-cpp.html" title="previous chapter">C/C++</a></li>
       <li>Next: <a href="git-best-practices.html" title="next chapter">Introduction</a></li>
   </ul></li>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
         </div>
       </div>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2018, Bryce Eggleton.
+      &copy;2016-2019, Bryce Eggleton.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="../_sources/sll/res-version-control.rst.txt"

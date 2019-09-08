@@ -1,27 +1,17 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Code Style Guidelines &#8212; Shift Left Logical v1.0.0</title>
+    <meta charset="utf-8" />
+    <title>Code Style Guidelines &#8212; Shift Left Logical v1.1.0</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Utilizing virtualenv" href="python-virtual-env.html" />
@@ -32,23 +22,24 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body>
+  </head><body>
   
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="code-style-guidelines">
 <h1>Code Style Guidelines<a class="headerlink" href="#code-style-guidelines" title="Permalink to this headline">¶</a></h1>
 <p>A lot of good information can also be found at the Hitchhikers Guide to
-Python <a class="footnote-reference" href="#id26" id="id1">[10]</a>.</p>
+Python <a class="footnote-reference brackets" href="#id26" id="id1">10</a>.</p>
 <div class="section" id="pep-8">
 <h2>PEP 8<a class="headerlink" href="#pep-8" title="Permalink to this headline">¶</a></h2>
 <p>For Python,
-<a class="reference external" href="https://www.python.org/dev/peps/pep-0008">PEP 8</a> <a class="footnote-reference" href="#id14" id="id3">[1]</a> is the de-facto guide
+<a class="reference external" href="https://www.python.org/dev/peps/pep-0008">PEP 8</a> <a class="footnote-reference brackets" href="#id14" id="id3">1</a> is the de-facto guide
 for code style (a formatted and easier-to-read version can be found at
 <a class="reference external" href="http://pep8.org/">pep8.org</a>). It is a well-defined and
 respected list of guidelines for code style that I recommend following whenever
@@ -57,12 +48,12 @@ code, or other reasons to deviate from PEP 8. In situations where possible,
 new code being added should conform to PEP 8, and any ongoing deviations agreed
 upon by the code contributors should be documented. In addition to documenting
 alterations, they should be supported by configuration for your linting tools
-(such as a <code class="docutils literal"><span class="pre">setup.cfg</span></code> file – see the Flake 8 section below) that can be
+(such as a <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> file – see the Flake 8 section below) that can be
 shared amongst contributors.</p>
 </div>
 <div class="section" id="the-zen-of-python">
 <h2>The Zen of Python<a class="headerlink" href="#the-zen-of-python" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://www.python.org/dev/peps/pep-0020/">The Zen of Python</a> <a class="footnote-reference" href="#id16" id="id5">[2]</a>
+<p><a class="reference external" href="https://www.python.org/dev/peps/pep-0020/">The Zen of Python</a> <a class="footnote-reference brackets" href="#id16" id="id5">2</a>
 (officially known as
 <a class="reference external" href="https://www.python.org/dev/peps/pep-0020/">PEP 20</a>
 ) is a short manifesto of sorts which embodies many of the core principles of
@@ -71,18 +62,18 @@ experience. If you haven’t already, it is recommended required reading!</p>
 </div>
 <div class="section" id="flake8">
 <h2>Flake8<a class="headerlink" href="#flake8" title="Permalink to this headline">¶</a></h2>
-<p>The tool <a class="reference external" href="http://flake8.pycqa.org/en/latest/">Flake8</a> <a class="footnote-reference" href="#id18" id="id7">[3]</a> is an excellent
+<p>The tool <a class="reference external" href="http://flake8.pycqa.org/en/latest/">Flake8</a> <a class="footnote-reference brackets" href="#id18" id="id7">3</a> is an excellent
 open source command line wrapper around multiple useful tools. Flake8 combines
-PEP 8 style checking (<code class="docutils literal"><span class="pre">pycodestyle</span></code> <a class="footnote-reference" href="#id20" id="id8">[4]</a> package), <code class="docutils literal"><span class="pre">pyflakes</span></code> <a class="footnote-reference" href="#id21" id="id9">[5]</a> checking
+PEP 8 style checking (<code class="docutils literal notranslate"><span class="pre">pycodestyle</span></code> <a class="footnote-reference brackets" href="#id20" id="id8">4</a> package), <code class="docutils literal notranslate"><span class="pre">pyflakes</span></code> <a class="footnote-reference brackets" href="#id21" id="id9">5</a> checking
 for code errors (it does not import so its safe to use on modules with
-side-effects/monkeypatching), and McCabe complexity analysis (<code class="docutils literal"><span class="pre">mccabe</span></code> <a class="footnote-reference" href="#id22" id="id10">[6]</a>).
+side-effects/monkeypatching), and McCabe complexity analysis (<code class="docutils literal notranslate"><span class="pre">mccabe</span></code> <a class="footnote-reference brackets" href="#id22" id="id10">6</a>).
 Even if it is not feasible or desired to directly enforce any guidelines, I
 encourage everyone to utilize Flake8 to sanitize existing files they are
 working in and check new code being committed.</p>
-<p>These tools support configuration via the <code class="docutils literal"><span class="pre">setup.cfg</span></code> file in the package
+<p>These tools support configuration via the <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> file in the package
 root. This means that if there any package-specific variations in
 configuration, or things like deviations from PEP 8 you wish to support, they
-can be reflected in <code class="docutils literal"><span class="pre">setup.cfg</span></code>, which can be committed to source control and
+can be reflected in <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code>, which can be committed to source control and
 stored in the package module itself for everyone to use.</p>
 <p>At the time of writing, please note that Flake8 only uses the first config file
 it finds, it is not hierarchical in transversing anscestor directories.
@@ -96,8 +87,8 @@ certain instances (AWS Lambda for example) where it will not be supported or
 there is an existing codebase where circumstances make refactoring an
 infeasible task. In these cases, I would recommend writing code as close as
 possible to Python 3 compatibility, with the remaining gap closed by using
-python-future <a class="footnote-reference" href="#id23" id="id11">[7]</a> or (if necessary) six <a class="footnote-reference" href="#id24" id="id12">[8]</a>. There is also a handy cheat
-sheet <a class="footnote-reference" href="#id25" id="id13">[9]</a> detailing some ways of being able to keep code compatible simply
+python-future <a class="footnote-reference brackets" href="#id23" id="id11">7</a> or (if necessary) six <a class="footnote-reference brackets" href="#id24" id="id12">8</a>. There is also a handy cheat
+sheet <a class="footnote-reference brackets" href="#id25" id="id13">9</a> detailing some ways of being able to keep code compatible simply
 by how you write it.</p>
 </div>
 <div class="section" id="documentation">
@@ -110,76 +101,49 @@ Resources and Links</p>
 </div>
 <div class="section" id="footnotes">
 <h2>Footnotes<a class="headerlink" href="#footnotes" title="Permalink to this headline">¶</a></h2>
-<table class="docutils footnote" frame="void" id="id14" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[1]</a></td><td><a class="reference external" href="https://www.python.org/dev/peps/pep-0008">PEP 8</a>
-is the de-facto Python coding style guide.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id16" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[2]</a></td><td><a class="reference external" href="https://www.python.org/dev/peps/pep-0020/">The Zen of Python</a>
-is a short manifesto of Python principles.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id18" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id7">[3]</a></td><td><a class="reference external" href="http://flake8.pycqa.org/en/latest/">Flake8</a>
-is a command line utility for checking code style.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id20" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id8">[4]</a></td><td><a class="reference external" href="https://pycodestyle.readthedocs.io/en/latest/">pycodestyle</a>
-(used to be called pep8 package)</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id21" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id9">[5]</a></td><td><a class="reference external" href="https://github.com/PyCQA/pyflakes">pyflakes</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id22" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id10">[6]</a></td><td><a class="reference external" href="https://github.com/pycqa/mccabe">mccabe</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id23" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id11">[7]</a></td><td><a class="reference external" href="https://pypi.python.org/pypi/future">python-future</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id24" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id12">[8]</a></td><td><a class="reference external" href="https://pypi.python.org/pypi/six">six</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id25" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id13">[9]</a></td><td><a class="reference external" href="http://python-future.org/compatible_idioms.html">Python 2-3 Compatible Code Cheat Sheet</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id26" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[10]</a></td><td><a class="reference external" href="http://docs.python-guide.org/en/latest/">The Hitchhiker’s Guide to Python</a>
-has all sorts of information!</td></tr>
-</tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="id14"><span class="brackets"><a class="fn-backref" href="#id3">1</a></span></dt>
+<dd><p><a class="reference external" href="https://www.python.org/dev/peps/pep-0008">PEP 8</a>
+is the de-facto Python coding style guide.</p>
+</dd>
+<dt class="label" id="id16"><span class="brackets"><a class="fn-backref" href="#id5">2</a></span></dt>
+<dd><p><a class="reference external" href="https://www.python.org/dev/peps/pep-0020/">The Zen of Python</a>
+is a short manifesto of Python principles.</p>
+</dd>
+<dt class="label" id="id18"><span class="brackets"><a class="fn-backref" href="#id7">3</a></span></dt>
+<dd><p><a class="reference external" href="http://flake8.pycqa.org/en/latest/">Flake8</a>
+is a command line utility for checking code style.</p>
+</dd>
+<dt class="label" id="id20"><span class="brackets"><a class="fn-backref" href="#id8">4</a></span></dt>
+<dd><p><a class="reference external" href="https://pycodestyle.readthedocs.io/en/latest/">pycodestyle</a>
+(used to be called pep8 package)</p>
+</dd>
+<dt class="label" id="id21"><span class="brackets"><a class="fn-backref" href="#id9">5</a></span></dt>
+<dd><p><a class="reference external" href="https://github.com/PyCQA/pyflakes">pyflakes</a></p>
+</dd>
+<dt class="label" id="id22"><span class="brackets"><a class="fn-backref" href="#id10">6</a></span></dt>
+<dd><p><a class="reference external" href="https://github.com/pycqa/mccabe">mccabe</a></p>
+</dd>
+<dt class="label" id="id23"><span class="brackets"><a class="fn-backref" href="#id11">7</a></span></dt>
+<dd><p><a class="reference external" href="https://pypi.python.org/pypi/future">python-future</a></p>
+</dd>
+<dt class="label" id="id24"><span class="brackets"><a class="fn-backref" href="#id12">8</a></span></dt>
+<dd><p><a class="reference external" href="https://pypi.python.org/pypi/six">six</a></p>
+</dd>
+<dt class="label" id="id25"><span class="brackets"><a class="fn-backref" href="#id13">9</a></span></dt>
+<dd><p><a class="reference external" href="http://python-future.org/compatible_idioms.html">Python 2-3 Compatible Code Cheat Sheet</a></p>
+</dd>
+<dt class="label" id="id26"><span class="brackets"><a class="fn-backref" href="#id1">10</a></span></dt>
+<dd><p><a class="reference external" href="http://docs.python-guide.org/en/latest/">The Hitchhiker’s Guide to Python</a>
+has all sorts of information!</p>
+</dd>
+</dl>
 </div>
 </div>
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -188,7 +152,7 @@ has all sorts of information!</td></tr>
 
 
 
-<p class="blurb">A catalog of free resources, articles, and references for topics in computing and programming which I hope can help others in their journey for knowledge.</p>
+<p class="blurb">This is a catalog of information, resources, and pseudo-articles I've written which I hope will be helpful to others in their journey for knowledge in computing and programming.</p>
 
 
 
@@ -204,6 +168,7 @@ has all sorts of information!</td></tr>
 
 <h3>Navigation</h3>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../res-general.html">General Resources</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../res-python.html">Python</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="python-why.html">Why Learn Python?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-resources.html">Python Resources</a></li>
@@ -221,12 +186,11 @@ has all sorts of information!</td></tr>
 <li class="toctree-l2"><a class="reference internal" href="python-mongodb.html">Python and MongoDB</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../res-version-control.html">Version Control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../res-general.html">General Resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../res-comp-sci.html">Computer Science</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../res-c-cpp.html">C/C++</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../res-web-apps.html">Web Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../res-version-control.html">Version Control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../res-toolbox.html">Developer’s Toolbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../res-comp-sci.html">Computer Science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../res-web-apps.html">Web Development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../res-courses.html">Course-Oriented Learning</a></li>
 </ul>
 
@@ -242,25 +206,33 @@ has all sorts of information!</td></tr>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
         </div>
       </div>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2018, Bryce Eggleton.
+      &copy;2016-2019, Bryce Eggleton.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="../../_sources/sll/python/python-best-practices.rst.txt"
