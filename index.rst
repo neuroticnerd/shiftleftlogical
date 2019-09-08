@@ -22,7 +22,7 @@ certain areas, but tries to maintain an overall agnostic approach.
     sll/res-general
     sll/res-python
     sll/res-c-cpp
-    sll/res-version-control
+    sll/res-git
     sll/res-toolbox
     sll/res-comp-sci
     sll/res-web-apps
