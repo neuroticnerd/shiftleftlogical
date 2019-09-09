@@ -1,17 +1,6 @@
 General Resources
 =================
 
-Aside from making sure you don't neglect the official documentation of the
-languages and tools you are using for a
-project, don't forget that Google/DuckDuckGo/<insert-favorite-search-engine> is your best
-friend! Many languages, libraries, or frameworks also have their own respective
-forums and/or IRC/Discord channels where more knowledgeable people can answer
-any questions you might come across.
-
-
-Forums and Blogs
-----------------
-
 |link_stackoverflow|
     One of the most popular software and tech forums, and for good reason;
     easily the best forum I’ve found for anything programming related,
@@ -19,6 +8,13 @@ Forums and Blogs
     or easiest approach, so you may have to use a little intuition and look at
     some of the other answers listed for questions, but I can’t count the
     number of times a great answer has helped me from that site.
+
+|link_reddit|
+    Reddit communities vary widely in both helpfulness and quality, but there
+    are many fantastic subreddits about almost any topic you can imagine.
+
+|link_learn_anything|
+    Search and find resources and links for learning about all sorts of topics.
 
 |link_codinghorror|
     The blog of Jeff Atwood who, among other things, Co-Founded
@@ -39,7 +35,15 @@ Forums and Blogs
 
 .. |link_stackoverflow| raw:: html
 
-    <a href="https://stackoverflow.com/" rel="external noopener noreferrer">Stack Overflow</a>
+    <a href="https://stackoverflow.com/questions/" rel="external noopener noreferrer">Stack Overflow</a>
+
+.. |link_reddit| raw:: html
+
+    <a href="https://www.reddit.com/" rel="external noopener noreferrer">Reddit</a>
+
+.. |link_learn_anything| raw:: html
+
+    <a href="https://learn-anything.xyz/" rel="external noopener noreferrer">Learn Anything</a>
 
 .. |link_codinghorror| raw:: html
 

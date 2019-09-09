@@ -1,4 +1,4 @@
-
+=======================
 Programmer's Toolbox
 =======================
 
@@ -34,6 +34,15 @@ of the environment.
     bunch of js I don’t know about), and most importantly Firebug. Firebug was
     a web developer’s dream come true, it has everything you need to make
     client-side web development a whole lot easier.
+
+WIP/coming soon:
+
+*   SSH + config
+*   Docker
+*   Packer
+*   Ansible
+*   Vagrant
+*   VirtualBox
 
 
 

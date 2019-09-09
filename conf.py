@@ -121,6 +121,8 @@ todo_include_todos = False
 # -- Options for HTML output ----------------------------------------------
 
 _description = (
+    'NOTE: this site is being updated and some information may be missing and '
+    'some links may be dead!<br><br>'
     'This is a catalog of information, resources, and pseudo-articles I\'ve '
     'written which I hope will be helpful to others in their journey for '
     'knowledge in computing and programming.'
