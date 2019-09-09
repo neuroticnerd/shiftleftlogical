@@ -2,7 +2,7 @@
 Shift Left Logical
 ==================
 
-*NOTE: some of this information may now be out of date as of 2019-09-08!*
+.. include:: sll/main-disclaimer.rst
 
 This is a catalog of information, resources, and pseudo-articles I've written
 which I hope will be helpful to others undertaking a journey in computer
@@ -13,15 +13,12 @@ knowledge. This information can be somewhat opinionated in
 certain areas, but tries to maintain an overall agnostic approach.
 
 
-.. include:: sll/res-general.rst
-
-
 .. toctree::
     :hidden:
 
     sll/awesome-lists
-    sll/res-general
-    sll/res-python
+    sll/main-resources
+    sll/main-python
     sll/main-go
     sll/res-c-cpp
     sll/main-nim
