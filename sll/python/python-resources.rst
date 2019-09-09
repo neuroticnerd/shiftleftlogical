@@ -1,6 +1,10 @@
 Python Resources
 ======================
 
+|link_hitchhikers_guide|
+    The resource to end all resources; this is arguably the single-most useful
+    compendium of Python references and information in one place.
+
 |link_learnpython|
     Pretty awesome site really, I wish I had known about
     this when I was learning to write code or picking up Python
@@ -37,6 +41,11 @@ Python Resources
 
 |link_nonprog_guide|
 
+
+
+.. |link_hitchhikers_guide| raw:: html
+
+    <a href="https://docs.python-guide.org/en/latest/" rel="external noopener noreferrer">The Hitchhiker's Guide to Python</a>
 
 .. |link_learnpython| raw:: html
 

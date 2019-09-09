@@ -19,9 +19,12 @@ certain areas, but tries to maintain an overall agnostic approach.
 .. toctree::
     :hidden:
 
+    sll/awesome-lists
     sll/res-general
     sll/res-python
+    sll/main-go
     sll/res-c-cpp
+    sll/main-nim
     sll/res-git
     sll/res-toolbox
     sll/res-comp-sci

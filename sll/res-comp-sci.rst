@@ -2,6 +2,11 @@
 Computer Science
 ================
 
+Open Source Society University
+---------------------------------
+|link_ossu_comp_sci|
+
+
 Fundamentals
 ------------
 
@@ -45,3 +50,7 @@ Discrete Mathematics
 .. |link_mathforcompsci| raw:: html
 
     <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-spring-2015/" rel="external noopener noreferrer">Mathematics for Computer Science (MIT OCW)</a>
+
+.. |link_ossu_comp_sci| raw:: html
+
+    <a href="https://github.com/ossu/computer-science" rel="external noopener noreferrer">OSSU Computer Science Self-Teaching Guide</a>

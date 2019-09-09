@@ -1,6 +1,6 @@
 
-Developer's Toolbox
-===================
+Programmer's Toolbox
+=======================
 
 There are many tools that might be specific to the project or language(s) you
 are working with, but there are a few which are generally useful regardless
@@ -34,6 +34,7 @@ of the environment.
     bunch of js I don’t know about), and most importantly Firebug. Firebug was
     a web developer’s dream come true, it has everything you need to make
     client-side web development a whole lot easier.
+
 
 
 .. |link_putty| raw:: html
