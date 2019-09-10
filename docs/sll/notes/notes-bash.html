@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Algorithms Notes &#8212; Shift Left Logical v1.1.0</title>
+    <title>Bash Notes &#8212; Shift Left Logical v1.1.0</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -14,8 +14,8 @@
     <script type="text/javascript" src="../../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Object Oriented Programming Notes" href="notes-oop.html" />
-    <link rel="prev" title="Data Structures Notes" href="notes-data-structures.html" />
+    <link rel="next" title="The Awesome Lists" href="../awesome-lists.html" />
+    <link rel="prev" title="C++ Notes" href="notes-cpp.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -32,17 +32,22 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="algorithms-notes">
-<h1>Algorithms Notes<a class="headerlink" href="#algorithms-notes" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://medium.com/&#64;codingfreak/top-algorithms-data-structures-concepts-every-computer-science-student-should-know-e0549c67b4ac">https://medium.com/&#64;codingfreak/top-algorithms-data-structures-concepts-every-computer-science-student-should-know-e0549c67b4ac</a></p>
-<p><a class="reference external" href="https://www.geeksforgeeks.org/top-algorithms-and-data-structures-for-competitive-programming/">https://www.geeksforgeeks.org/top-algorithms-and-data-structures-for-competitive-programming/</a></p>
-<p><a class="reference external" href="https://interestingengineering.com/15-of-the-most-important-algorithms-that-helped-define-mathematics-computing-and-physics">https://interestingengineering.com/15-of-the-most-important-algorithms-that-helped-define-mathematics-computing-and-physics</a></p>
-<p><a class="reference external" href="https://towardsdatascience.com/top-algorithms-and-data-structures-you-really-need-to-know-ab9a2a91c7b5?gi=8cff4cf56179">https://towardsdatascience.com/top-algorithms-and-data-structures-you-really-need-to-know-ab9a2a91c7b5?gi=8cff4cf56179</a></p>
-<p><a class="reference external" href="https://www.hackerearth.com/blog/developers/top-7-algorithms-data-structures-every-programmer-know/">https://www.hackerearth.com/blog/developers/top-7-algorithms-data-structures-every-programmer-know/</a></p>
-<p><a class="reference external" href="https://hbfs.wordpress.com/2008/12/23/the-10-classes-of-algorithms-every-programmer-must-know-about/">https://hbfs.wordpress.com/2008/12/23/the-10-classes-of-algorithms-every-programmer-must-know-about/</a></p>
-<p><a class="reference external" href="http://www.koutschan.de/misc/algorithms.php">http://www.koutschan.de/misc/algorithms.php</a></p>
-<p><a class="reference external" href="https://www.quora.com/Which-are-the-10-algorithms-every-computer-science-student-must-implement-at-least-once-in-life">https://www.quora.com/Which-are-the-10-algorithms-every-computer-science-student-must-implement-at-least-once-in-life</a></p>
-<p><a class="reference external" href="https://lemire.me/blog/2010/07/05/the-five-most-important-algorithms/">https://lemire.me/blog/2010/07/05/the-five-most-important-algorithms/</a></p>
+  <div class="section" id="bash-notes">
+<h1>Bash Notes<a class="headerlink" href="#bash-notes" title="Permalink to this headline">¶</a></h1>
+<p><em>NOTE: most of this is likely to be relevant to other shells as well, but it
+is only tested or intended for Bash use.</em></p>
+<div class="section" id="find-largest-files-when-there-is-insufficient-disk-space">
+<h2>Find largest files when there is insufficient disk space<a class="headerlink" href="#find-largest-files-when-there-is-insufficient-disk-space" title="Permalink to this headline">¶</a></h2>
+<p>A little caveat of some coreutils like <code class="docutils literal notranslate"><span class="pre">sort</span></code> is that they may write to
+a temp file behind the scenes to do their work. Normally this would be fine,
+but if you have a system that has run out of disk space, it can make it
+difficult to find large files taking up space. To find the largest files
+you can use the <code class="docutils literal notranslate"><span class="pre">du</span></code> command, then <code class="docutils literal notranslate"><span class="pre">sort</span></code> its output before using <code class="docutils literal notranslate"><span class="pre">head</span></code>
+to limit the number of results:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo du -ka / <span class="p">|</span> sort -n -r -S <span class="m">10000000</span> <span class="p">|</span> head -n <span class="m">100</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -74,12 +79,15 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../main-notes.html">Notes</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="notes-data-structures.html">Data Structures Notes</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Algorithms Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notes-algorithms.html">Algorithms Notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notes-oop.html">Object Oriented Programming Notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notes-parallelism.html">Parallel and Distributed Computing Notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notes-python.html">Python Notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notes-cpp.html">C++ Notes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notes-bash.html">Bash Notes</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Bash Notes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#find-largest-files-when-there-is-insufficient-disk-space">Find largest files when there is insufficient disk space</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../awesome-lists.html">The Awesome Lists</a></li>
@@ -100,8 +108,8 @@
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
   <li><a href="../main-notes.html">Notes</a><ul>
-      <li>Previous: <a href="notes-data-structures.html" title="previous chapter">Data Structures Notes</a></li>
-      <li>Next: <a href="notes-oop.html" title="next chapter">Object Oriented Programming Notes</a></li>
+      <li>Previous: <a href="notes-cpp.html" title="previous chapter">C++ Notes</a></li>
+      <li>Next: <a href="../awesome-lists.html" title="next chapter">The Awesome Lists</a></li>
   </ul></li>
   </ul></li>
 </ul>
@@ -136,7 +144,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="../../_sources/sll/notes/notes-algorithms.rst.txt"
+      <a href="../../_sources/sll/notes/notes-bash.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 
