@@ -16,14 +16,15 @@ certain areas, but tries to maintain an overall agnostic approach.
 .. toctree::
     :hidden:
 
+    sll/main-notes
     sll/awesome-lists
     sll/main-resources
     sll/main-python
     sll/main-go
-    sll/res-c-cpp
+    sll/main-c-cpp
     sll/main-nim
-    sll/res-git
-    sll/res-toolbox
-    sll/res-comp-sci
-    sll/res-web-apps
-    sll/res-courses
+    sll/main-git
+    sll/main-toolbox
+    sll/main-comp-sci
+    sll/main-web-apps
+    sll/main-courses

@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>C++ Notes &#8212; Shift Left Logical v1.1.0</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Parallel and Distributed Computing Notes" href="notes-parallelism.html" />
+    <link rel="prev" title="Python Notes" href="notes-python.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="c-notes">
+<h1>C++ Notes<a class="headerlink" href="#c-notes" title="Permalink to this headline">¶</a></h1>
+<p>CONST VS NON-CONST MEMBER FUNCTIONS:</p>
+<p>In short, they’re used to add ‘const correctness’ to your program.
+value_type&amp; top() { return this.item }</p>
+<p>This is used to provide mutable access to item. It is used so you can modify the element in the container.
+For example:
+c.top().set_property(5);  // OK - sets a property of ‘item’
+cout &lt;&lt; c.top().get_property();  // OK - gets a property of ‘item’</p>
+<p>One common example for this pattern is returning mutable access to an element with vector::operator[int index].
+std::vector&lt;int&gt; v(5);
+v[0] = 1;  // Returns operator[] returns int&amp;.</p>
+<p>On the other hand:
+const value_type&amp; top() const { return this.item }</p>
+<p>This is used to provide const access to item. It’s more restrictive than the previous version - but it has one advantage - you can call it on a const object.
+void Foo(const Container &amp;c) {</p>
+<blockquote>
+<div><p>c.top();  // Since ‘c’ is const, you cannot modify it… so the const top is called.
+c.top().set_property(5);  // compile error can’t modify const ‘item’.
+c.top().get_property();   // OK, const access on ‘item’.</p>
+</div></blockquote>
+<p>}</p>
+<p>To follow the vector example:
+const std::vector&lt;int&gt; v(5, 2);
+v[0] = 5;  // compile error, can’t mutate a const vector.
+std::cout &lt;&lt; v[1];  // OK, const access to the vector.</p>
+<p>STATIC MEMBER VARIABLES</p>
+<p>Member variables of a class can be made static by using the static keyword. Static member variables only exist once in a program regardless of how many class objects are defined! One way to think about it is that all objects of a class share the static variables. Consider the following program:
+class Something
+{
+public:</p>
+<blockquote>
+<div><p>static int s_nValue;</p>
+</div></blockquote>
+<p>};</p>
+<p>int Something::s_nValue = 1;</p>
+<p>int main()
+{</p>
+<blockquote>
+<div><p>Something cFirst;
+cFirst.s_nValue = 2;</p>
+<p>Something cSecond;
+std::cout &lt;&lt; cSecond.s_nValue;</p>
+<p>return 0;</p>
+</div></blockquote>
+<p>}</p>
+<p>&amp; AMPERSAND OPERATOR DIFFERENCES:</p>
+<p>Bitwise AND</p>
+<p>a &amp; b
+a bitand b
+Yes
+Yes
+R T::operator &amp;(S b);
+R operator &amp;(S a, T b);</p>
+<p>reference</p>
+<p>address-of</p>
+<p>WHY PUT ALL OF TEMPLATE DEFINITION IN THE HEADER:</p>
+<p>The compiler needs to have access to the entire template definition (not just the signature) in order to generate code for each instantiation of the template, so you need to move the definitions of the functions to your header.</p>
+<p>The definition of a class template and the implementation of its member functions has to be visible to every place that instantiates it with a distinct type. i.e. in order to instantiate myTemplate&lt;int&gt; you need to see the full definition and implementation of myTemplate.
+The easiest way to do this is to put the definition of the template and its member functions in the same header, but there are other ways. For example, you could put the member function implementations in a separate file that was included separately. You could then include it from the first header, or only include the implementation file where you needed it.
+For example, one practise is to explicitly instantiate a template for distinct set of parameters in one .cpp file and declare those instantiations extern in the header. This way, those instantiations can be used in other source files without requiring the implementation of the template member functions to be visible. However, unless you include the implementation file you won’t be able to use other sets of template parameters.
+i.e. if you have myTemplate&lt;int&gt; and myTemplate&lt;std::string&gt; defined as extern then you can use them fine, but if myTemplate&lt;double&gt; is not defined extern then you cannot use that without the implementation</p>
+<p>REFERENCES VS POINTERS:</p>
+<p>I know references are syntactic sugar, so easier code to read and write :)
+But what are the differences?
+Summary from answers and links below:
+A pointer can be re-assigned any number of times while a reference can not be reassigned after initialization.
+A pointer can point to NULL while reference can never point to NULL
+You can’t take the address of a reference like you can with pointers
+There’s no “reference arithmetics” (but you can take the address of an object pointed by a reference and do pointer arithmetics on it as in &amp;obj + 5).
+To clarify a misconception:
+The C++ standard is very careful to avoid dictating how a compiler must implement references, but every C++ compiler implements references as pointers. That is, a declaration such as:
+int &amp;ri = i;</p>
+<p>allocates the same amount of storage as a pointer, and places the address of i into that storage.
+So pointer and reference occupies same amount of memory
+As a general rule,
+Use references in function parameters and return types to define attractive interfaces.
+Use pointers to implement algorithms and data structures.</p>
+<p>INITIALIZER LIST:</p>
+<p>If you don’t use the initializer list, the member or base class gets default constructed before the opening curly brace.
+So, your calls to set it later will add an operator=() call.
+If you use the initializer list, the member or base class has the proper constructor is called.
+Depending on your classes, this might be required or faster.</p>
+<p>For primitives, there is no difference between using initializer lists or constructing them via assignment.
+For other types, initializer lists might afford you performance improvements when constructing objects.
+Do note that the order of initializing (in initializer lists) depends on the order of declaration in the class. If the declarations are out of order and you need to construct data that depends on something else already being initialized before hand, that is an exception to the ‘use initialization lists when possible rule’.
+More info: <a class="reference external" href="http://www.parashift.com/c++-faq-lite/ctors.html#faq-10.6">http://www.parashift.com/c++-faq-lite/ctors.html#faq-10.6</a></p>
+<p>Also, never perform unmanaged resource acquisition in initializer lists. In other words, either use “resource acquisition is initialization” (thereby avoiding unmanaged resources entirely) or else perform the resource acquisition in the constructor body.
+And warning #2 Perform every resource allocation (e.g., new) in its own code statement which immediately gives the new resource to a manager object (e.g., auto_ptr).
+<a class="reference external" href="http://www.gotw.ca/gotw/056.htm">http://www.gotw.ca/gotw/056.htm</a></p>
+<p>RESOURCE ACQUISITION IS INITIALIZATION:</p>
+<p>EXPLICITLY CALLING A CONSTRUCTOR:</p>
+<p>you cannot explicitly call a constructor in c++. you can implicitly invoke one by creating a new object such as by using the new operator, or a temporary object as a parameter to a function call</p>
+<p>In general you do not call the constructor directly. The new operator calls it for you or a subclass calls the parent class’ constructors. In C++, the base class is guarenteed to be fully constructed before the derived class’ constructor starts.
+The only time you would call a constructor directly is in the extremely rare case where you are managing memory without using new. And even then, you shouldn’t do it. Instead you should use the placement form of operator new.</p>
+<p>PLACEMENT NEW OPERATOR:</p>
+<p>Placement new allows you to construct an object on memory that’s already allocated.
+You may want to do this for optimizations (it is faster not to re-allocate all the time) but you need to re-construct an object multiple times. If you need to keep re-allocating it might be more efficient to allocate more than you need, even though you don’t want to use it yet.
+devex gives a good example:
+Standard C++ also supports placement new operator, which constructs an object on a pre-allocated buffer. This is useful when building a memory pool, a garbage collector or simply when performance and exception safety are paramount (there’s no danger of allocation failure since the memory has already been allocated, and constructing an object on a pre-allocated buffer takes less time):
+void placement() {</p>
+<dl class="simple">
+<dt>char <a href="#id1"><span class="problematic" id="id2">*</span></a>buf  = new char[sizeof(string)];   //pre-allocated buffer</dt><dd><p>string <a href="#id3"><span class="problematic" id="id4">*</span></a>p = new (buf) string(“hi”);  //placement new
+string <a href="#id5"><span class="problematic" id="id6">*</span></a>q = new string(“hi”);  //ordinary heap allocation</p>
+</dd>
+</dl>
+<p>You may also want to be sure there can be no allocation failure at a certain part of critical code (maybe you work on a pacemaker for example). In that case you would want to use placement new.
+Deallocation in placement new:
+You should not deallocate every object that is using the memory buffer. Instead you should delete[] only the original buffer. You would have to then call the destructors directly of your classes manually. For a good suggestion on this please see Stroustrup’s FAQ on: Is there a “placement delete”?</p>
+<p>Strictly, it’s undefined behaviour to call delete[] on the original char buffer. Using placement new has ended the lifetime of the original char objects by re-using their storage. If you now call delete[] buf the dynamic type of the object(s) pointed to no longer matches their static type so you have undefined behaviour. It is more consistent to use operator new/operator delete to allocate raw memory intended for use by placement new</p>
+<p>PURE VIRTUAL FUNCTIONS AND 0:</p>
+<p>The reason =0 is used is that Bjarne Stroustrup didn’t think he could get another keyword, such as “pure” past the C++ community at the time the feature was being implemented. This is described in his book, The Design &amp; Evolution of C++, section 13.2.3:
+The curious =0 syntax was chosen … because at the time I saw no chance of getting a new keyword accepted.
+He also states explicitly that this need not set the vtable entry to NULL, and that doing so is not the best way of implementing pure virtual functions.</p>
+<p>As with most “Why” questions about the design of C++, the first place to look is The Design and Evolution of C++, by Bjarne Stroustrup1:
+The curious =0 syntax was chosen over the obvious alternative of introducing a new keyword pure or abstract because at the time I saw no chance of getting a new keyword accepted. Had I suggested pure, Release 2.0 would have shipped without abstract classes. Given a choice between a nicer syntax and abstract classes, I chose abstract classes. Rather than risking delay and incurring the certain fights over pure, I used the tradition C and C++ convention of using 0 to represent “not there.” The =0 syntax fits with my view that a function body is the initializer for a function also with the (simplistic, but usually adequate) view of the set of virtual functions being implemented as a vector of function pointers. [ … ]</p>
+<p>What is polymorphism.
+What is overriding and overloading.
+What is heap and stack.
+Describe the process to take a single-file hello-world source file and make it into an executable.
+What is a hash table.
+What is a linked list. Why would you prefer to use this rather than e.g. an array.
+Describe the binary search algorithm
+Reference vs pointer and how to dereference with syntax
+STL and templating
+Auto pointers</p>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Shift Left Logical</a></h1>
+
+
+
+<p class="blurb">NOTE: this site is being updated and some information may be missing and some links may be dead!<br><br>This is a catalog of information, resources, and pseudo-articles I've written which I hope will be helpful to others in their journey for knowledge in computing and programming.</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=neuroticnerd&repo=shiftleftlogical&type=star&count=True&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../main-notes.html">Notes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="notes-data-structures.html">Data Structures Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notes-algorithms.html">Algorithms Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notes-oop.html">Object Oriented Programming Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notes-python.html">Python Notes</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">C++ Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notes-parallelism.html">Parallel and Distributed Computing Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../awesome-lists.html">The Awesome Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../main-resources.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../main-python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../main-go.html">Golang (WIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../main-c-cpp.html">C/C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../main-nim.html">Nim (WIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../main-git.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../main-toolbox.html">Programmer’s Toolbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../main-comp-sci.html">Computer Science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../main-web-apps.html">Web Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../main-courses.html">Course-Oriented Learning</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../main-notes.html">Notes</a><ul>
+      <li>Previous: <a href="notes-python.html" title="previous chapter">Python Notes</a></li>
+      <li>Next: <a href="notes-parallelism.html" title="next chapter">Parallel and Distributed Computing Notes</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016-2019, Bryce Eggleton.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/sll/notes/notes-cpp.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
