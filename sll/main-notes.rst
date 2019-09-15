@@ -13,3 +13,4 @@ Notes
     notes/notes-python
     notes/notes-cpp
     notes/notes-bash
+    notes/notes-flask

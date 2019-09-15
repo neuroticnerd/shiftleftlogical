@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Parallel and Distributed Computing Notes &#8212; Shift Left Logical v1.1.0</title>
+    <title>Flask Notes &#8212; Shift Left Logical v1.1.0</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -14,8 +14,8 @@
     <script type="text/javascript" src="../../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Python Notes" href="notes-python.html" />
-    <link rel="prev" title="Object Oriented Programming Notes" href="notes-oop.html" />
+    <link rel="next" title="The Awesome Lists" href="../awesome-lists.html" />
+    <link rel="prev" title="Bash Notes" href="notes-bash.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -32,13 +32,26 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="parallel-and-distributed-computing-notes">
-<h1>Parallel and Distributed Computing Notes<a class="headerlink" href="#parallel-and-distributed-computing-notes" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="http://www.cac.cornell.edu/education/training/StampedeJune2013/ParallelProgramming.pdf">http://www.cac.cornell.edu/education/training/StampedeJune2013/ParallelProgramming.pdf</a></p>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Mutual_exclusion">https://en.wikipedia.org/wiki/Mutual_exclusion</a></p>
-<p><a class="reference external" href="https://www.geeksforgeeks.org/mutex-vs-semaphore/">https://www.geeksforgeeks.org/mutex-vs-semaphore/</a></p>
-<p><a class="reference external" href="https://www.geeksforgeeks.org/inter-process-communication-ipc/">https://www.geeksforgeeks.org/inter-process-communication-ipc/</a></p>
-<p><a class="reference external" href="http://www.cloudbus.org/~raj/cluster/v2chap1.pdf">http://www.cloudbus.org/~raj/cluster/v2chap1.pdf</a></p>
+  <div class="section" id="flask-notes">
+<h1>Flask Notes<a class="headerlink" href="#flask-notes" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># https://stackoverflow.com/questions/38048355/large-file-upload-in-flask</span>
+<span class="c1"># https://stackoverflow.com/questions/15040706/streaming-file-upload-using-bottle-or-flask-or-similar</span>
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="s2">&quot;/upload/&lt;filename&gt;&quot;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="s2">&quot;PUT&quot;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">upload_process</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="n">secure_filename</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="n">filepath_full</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">application</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;UPLOAD_FOLDER&#39;</span><span class="p">],</span> <span class="n">filename</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath_full</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">chunk_size</span> <span class="o">=</span> <span class="mi">4096</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="n">chunk</span> <span class="o">=</span> <span class="n">flask</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">stream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">chunk_size</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">return</span>
+
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;filename&#39;</span><span class="p">:</span> <span class="n">filename</span><span class="p">})</span>
+</pre></div>
+</div>
 </div>
 
 
@@ -72,11 +85,11 @@
 <li class="toctree-l2"><a class="reference internal" href="notes-data-structures.html">Data Structures Notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notes-algorithms.html">Algorithms Notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notes-oop.html">Object Oriented Programming Notes</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Parallel and Distributed Computing Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notes-parallelism.html">Parallel and Distributed Computing Notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notes-python.html">Python Notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notes-cpp.html">C++ Notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notes-bash.html">Bash Notes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notes-flask.html">Flask Notes</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Flask Notes</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../awesome-lists.html">The Awesome Lists</a></li>
@@ -97,8 +110,8 @@
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
   <li><a href="../main-notes.html">Notes</a><ul>
-      <li>Previous: <a href="notes-oop.html" title="previous chapter">Object Oriented Programming Notes</a></li>
-      <li>Next: <a href="notes-python.html" title="next chapter">Python Notes</a></li>
+      <li>Previous: <a href="notes-bash.html" title="previous chapter">Bash Notes</a></li>
+      <li>Next: <a href="../awesome-lists.html" title="next chapter">The Awesome Lists</a></li>
   </ul></li>
   </ul></li>
 </ul>
@@ -133,7 +146,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="../../_sources/sll/notes/notes-parallelism.rst.txt"
+      <a href="../../_sources/sll/notes/notes-flask.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 
